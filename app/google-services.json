@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "769858851837",
+    "project_id": "fyp-intelidea",
+    "storage_bucket": "fyp-intelidea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769858851837:android:7f3d3903fd8b47ef42bf94",
+        "android_client_info": {
+          "package_name": "com.example.fypintelidea"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769858851837-82nc2pf2mlq6i5cmv221h01apskjko5l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCExRqHk5bgnmb_hlLbpMtHN3SV9OGN68g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "769858851837-82nc2pf2mlq6i5cmv221h01apskjko5l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

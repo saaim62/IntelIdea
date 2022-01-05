@@ -1,0 +1,38 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_white"
+    android:gravity="center"
+    tools:context=".features.on_boarding.SplashActivity">
+
+    <ImageView
+        android:id="@+id/ivSplashLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginBottom="20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/intelidea_with_icon"
+        app:layout_constraintBottom_toTopOf="@+id/tvSmartMaintenance"
+        app:layout_constraintEnd_toEndOf="@+id/tvSmartMaintenance"
+        app:layout_constraintStart_toStartOf="@+id/tvSmartMaintenance"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvSmartMaintenance"
+        style="@style/TextAppearance.AppCompat.Large.Inverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/gentium_book_basic"
+        android:text="Ideas for Investors"
+        android:textColor="#802AC6"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="19dp"
+    android:layout_marginTop="0dp"
+    android:layout_marginRight="19dp"
+    android:layout_marginBottom="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/round_corners_background_color_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageViewCross"
+            android:layout_width="32dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_corners_background_color_off_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_cross_small" />
+
+        <EditText
+            android:id="@+id/etHoursSpent"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:fontFamily="@font/inter_regular"
+            android:hint="@string/hours"
+            android:inputType="number"
+            android:paddingStart="2dp"
+            android:textColor="@color/md_dark_green"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewCross"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/etDivider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="12dp"
+            android:background="#B8C7CC"
+            app:layout_constraintBottom_toBottomOf="@+id/etHoursSpent"
+            app:layout_constraintEnd_toEndOf="@+id/etHoursSpent"
+            app:layout_constraintStart_toStartOf="@+id/etHoursSpent" />
+
+        <TextView
+            android:id="@+id/tvContributor"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/inter_regular"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingStart="2dp"
+            android:paddingTop="12dp"
+            android:textColor="@color/md_dark_green"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/etHoursSpent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Bad Spare Part" />
+
+        <View
+            android:id="@+id/tvDivider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="12dp"
+            android:background="#B8C7CC"
+            app:layout_constraintBottom_toBottomOf="@+id/tvContributor"
+            app:layout_constraintEnd_toEndOf="@+id/tvContributor"
+            app:layout_constraintStart_toStartOf="@+id/tvContributor" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

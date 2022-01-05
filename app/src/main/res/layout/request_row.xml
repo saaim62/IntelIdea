@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/Dimen.CardHorizontalMargin"
+    android:layout_marginTop="@dimen/Dimen.CardVerticalMargin"
+    android:layout_marginEnd="@dimen/Dimen.CardHorizontalMargin"
+    android:layout_marginBottom="@dimen/Dimen.CardVerticalMargin"
+    android:background="@drawable/round_corners_background_color_white">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/inter_light"
+            android:maxLines="1"
+            android:paddingStart="0dp"
+            android:paddingEnd="16dp"
+            android:singleLine="true"
+            android:textColor="@color/md_dark_green"
+            android:textSize="16sp"
+            android:transitionName="workorderName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Oiling pump valve inspection and repairing bla bla bla" />
+
+        <ImageView
+            android:id="@+id/imageViewAssetHierarchy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewAssetHierarchy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewAssetHierarchy"
+            fresco:srcCompat="@drawable/ic_asset_small"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/textViewAssetHierarchy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/inter_regular"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/asset_name_lead_level_asset"
+            android:textColor="@color/md_dark_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvAsset"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+        <TextView
+            android:id="@+id/tvAsset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/inter_regular"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/asset_colon"
+            android:textColor="@color/md_dark_green"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewAssetHierarchy"
+            app:layout_constraintStart_toEndOf="@+id/imageViewAssetHierarchy"
+            app:layout_constraintTop_toTopOf="@+id/textViewAssetHierarchy" />
+
+        <TextView
+            android:id="@+id/tvDateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/date"
+            android:textColor="@color/md_dark_green"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDate"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/tvDate" />
+
+        <TextView
+            android:id="@+id/tvResponsibleEmp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Responsible:"
+            android:textColor="@color/md_dark_green"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvResponsibleEmpName"
+            app:layout_constraintStart_toEndOf="@+id/ivResponsibleEmp"
+            app:layout_constraintTop_toTopOf="@+id/tvResponsibleEmpName" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/inter_regular"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/md_dark_green"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvDateLabel"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAssetHierarchy"
+            tools:text="07.09.2018 22:00" />
+
+        <TextView
+            android:id="@+id/tvResponsibleEmpName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/inter_regular"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/md_dark_green"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tvResponsibleEmp"
+            app:layout_constraintTop_toBottomOf="@+id/tvDate"
+            fresco:layout_constraintEnd_toEndOf="parent"
+            tools:text="Alan Matic" />
+
+        <ImageView
+            android:id="@+id/ivStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvStatus"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvStatus"
+            app:srcCompat="@drawable/ic_open"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDateLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvDateLabel"
+            fresco:srcCompat="@drawable/ic_calendar_small"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/ivResponsibleEmp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvResponsibleEmp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvResponsibleEmp"
+            app:srcCompat="@drawable/ic_assignee_small"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/inter_regular"
+            android:padding="1dp"
+            android:text="@string/status"
+            android:textColor="@color/md_dark_green"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tvDeclineReason"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivStatus"
+            app:layout_constraintTop_toBottomOf="@+id/divider8"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/tvDeclineReason"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/md_dark_green"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="declined_reason" />
+
+        <View
+            android:id="@+id/divider8"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvResponsibleEmpName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

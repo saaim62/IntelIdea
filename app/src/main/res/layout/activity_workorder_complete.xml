@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Color.Background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clWorkOrderTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#26B8C9CC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivAsset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_asset_small"
+                app:tint="@color/md_dark_green" />
+
+            <TextView
+                android:id="@+id/tvAssetName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/md_dark_green"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivAsset"
+                app:layout_constraintTop_toTopOf="@+id/ivAsset"
+                tools:text="ASSET NAME / LEAD LEVEL ASSET" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/inter_light"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/md_dark_green"
+                android:textSize="24sp"
+                android:transitionName="workorderName"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAssetName"
+                tools:text="Oil pump valve inspection and repair" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/llDivider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/Color.Default"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clWorkOrderTopBar" />
+
+        <ImageView
+            android:id="@+id/ivEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvEndDate"
+            app:srcCompat="@drawable/ic_calendar_small"
+            app:tint="@color/md_dark_green" />
+
+        <ImageView
+            android:id="@+id/ivHoursSpent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/etHoursSpent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etHoursSpent"
+            app:srcCompat="@drawable/ic_time_small"
+            app:tint="@color/md_dark_green" />
+
+        <TextView
+            android:id="@+id/tvEndDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
+            android:drawableEnd="@drawable/ic_arrow_dropdown_grey"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center_vertical"
+            android:hint="@string/select_due_date"
+            android:minWidth="160dp"
+            android:text="@string/select_due_date"
+            android:textColor="@color/hint_text_color"
+            android:textSize="16sp"
+            android:tint="@color/md_dark_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivEndDate"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/end_date"
+            android:textColor="@color/hint_text_color"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/tvEndDate"
+            app:layout_constraintTop_toBottomOf="@+id/llDivider" />
+
+
+        <ImageView
+            android:id="@+id/ivAddContributor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:layout_weight="1"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etHoursSpent"
+            app:srcCompat="@drawable/ic_stat_add_blue"
+            app:tint="@color/Color.Info" />
+
+        <com.example.fypintelidea.core.views.ConnectavoContributorAdditionComponent
+            android:id="@+id/connectavoContributorAdditionComponent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etHoursSpent" />
+
+        <TextView
+            android:id="@+id/tvHourseSpent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/inter_regular"
+            android:padding="2dp"
+            android:text="@string/hours_spent_star"
+            android:textColor="@color/hint_text_color"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/etHoursSpent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEndDate" />
+
+        <ImageView
+            android:id="@+id/ivAddSpareParts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:layout_weight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/connectavoContributorAdditionComponent"
+            app:srcCompat="@drawable/ic_stat_add_blue"
+            app:tint="@color/Color.Info" />
+
+        <com.example.fypintelidea.core.views.ConnectavoSparePartsComponent
+            android:id="@+id/connectavoSparePartsComponent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:translationZ="0dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/connectavoContributorAdditionComponent">
+
+        </com.example.fypintelidea.core.views.ConnectavoSparePartsComponent>
+
+        <com.example.fypintelidea.core.views.ConnectavoCostAdditionComponent
+            android:id="@+id/connectavoCostAdditionComponent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/connectavoSparePartsComponent" />
+
+        <TextView
+            android:id="@+id/tvProblem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Problem"
+            app:layout_constraintStart_toStartOf="@+id/etProblem"
+            app:layout_constraintTop_toBottomOf="@+id/connectavoCostAdditionComponent" />
+
+        <TextView
+            android:id="@+id/tvComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Comment"
+            app:layout_constraintStart_toStartOf="@+id/etComment"
+            app:layout_constraintTop_toBottomOf="@+id/etSolution" />
+
+        <TextView
+            android:id="@+id/tvSolution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Solution"
+            app:layout_constraintStart_toStartOf="@+id/etSolution"
+            app:layout_constraintTop_toBottomOf="@+id/etProblem" />
+
+        <ImageView
+            android:id="@+id/ivProblem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/etProblem"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etProblem"
+            app:srcCompat="@drawable/ic_text_small"
+            app:tint="@color/md_dark_green" />
+
+        <ImageView
+            android:id="@+id/ivSolution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/etSolution"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etSolution"
+            app:srcCompat="@drawable/ic_text_small"
+            app:tint="@color/md_dark_green" />
+
+        <ImageView
+            android:id="@+id/ivComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/etComment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etComment"
+            app:srcCompat="@drawable/ic_text_small"
+            app:tint="@color/md_dark_green" />
+
+        <EditText
+            android:id="@+id/etProblem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:fontFamily="@font/inter_regular"
+            android:hint="@string/briefly_describe_the_problem"
+            android:inputType="textPersonName"
+            android:maxLines="3"
+            android:singleLine="false"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivProblem"
+            app:layout_constraintTop_toBottomOf="@+id/connectavoCostAdditionComponent" />
+
+        <ImageView
+            android:id="@+id/imgMicProblem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/etProblem"
+            app:layout_constraintEnd_toEndOf="@+id/etProblem"
+            app:layout_constraintTop_toTopOf="@+id/etProblem"
+            app:srcCompat="@drawable/ic_mic_blue_24dp" />
+
+
+        <EditText
+            android:id="@+id/etSolution"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:fontFamily="@font/inter_regular"
+            android:hint="@string/briefly_describe_the_solution"
+            android:inputType="textPersonName"
+            android:maxLines="3"
+            android:singleLine="false"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivSolution"
+            app:layout_constraintTop_toBottomOf="@+id/etProblem" />
+
+        <ImageView
+            android:id="@+id/imgMicSolution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/etSolution"
+            app:layout_constraintEnd_toEndOf="@+id/etSolution"
+            app:layout_constraintTop_toTopOf="@+id/etSolution"
+            app:srcCompat="@drawable/ic_mic_blue_24dp" />
+
+        <EditText
+            android:id="@+id/etComment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:fontFamily="@font/inter_regular"
+            android:hint="@string/enter_a_brief_comment"
+            android:inputType="textPersonName"
+            android:maxLines="3"
+            android:singleLine="false"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivComment"
+            app:layout_constraintTop_toBottomOf="@+id/etSolution" />
+
+        <ImageView
+            android:id="@+id/imgMicComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="@id/etComment"
+            app:layout_constraintEnd_toEndOf="@+id/etComment"
+            app:layout_constraintTop_toTopOf="@+id/etComment"
+            app:srcCompat="@drawable/ic_mic_blue_24dp" />
+
+        <EditText
+            android:id="@+id/etHoursSpent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:ems="10"
+            android:fontFamily="@font/inter_regular"
+            android:hint="@string/enter_total_time_spent"
+            android:inputType="number"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivHoursSpent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEndDate" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

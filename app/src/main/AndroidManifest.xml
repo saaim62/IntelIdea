@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.fypintelidea">
+    <!-- dangerous -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- normal -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Step 1: Add the following permission to the app  -->
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
+    <!-- Step 2: This permission is depreciated in Android P  -->
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+    <application
+        android:name=".core.app.Sugar"
+        android:allowBackup="false"
+        android:icon="@drawable/brain_idea_icon"
+        android:label="IntelIdea"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/brain_idea_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup">
+
+        <meta-data
+            android:name="DATABASE"
+            android:value="sugar_connectavo.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="4" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.connectavo.app.connectavo_android.core.providers.models" />
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="${enableCrashReporting}" />
+
+        <activity
+            android:name=".features.on_boarding.DashboardActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="1f43202c0c3a3478f2d9768b15dcc9c7a19d774f" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".features.on_boarding.SplashActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".features.on_boarding.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".features.on_boarding.LogInActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".features.workOrder.workOrderDetails.WorkOrderDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".features.activities.UsersActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".features.custom_status.StatusesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".features.activities.CategoriesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".features.activities.TagsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".features.workOrder.workOrderCompletion.SingleSelectComponentActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+        <activity
+            android:name=".features.profile.ProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".features.profile.ProfileEditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.colorfulMenuText.colorInfo" />
+
+        <activity
+            android:name=".features.workOrder.newWorkorder.NewWorkorderActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.colorfulMenuText.colorInfo"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".features.workOrder.workOrderCompletion.WorkOrderCompleteActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.colorfulMenuText.colorInfo"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".features.workOrder.workOrderCompletion.WorkOrderCompleteSignatureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.colorfulMenuText.colorInfo" />
+
+        <activity
+            android:name=".features.filters.FiltersWorkOrderActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.colorfulMenuText.colorRed" />
+
+        <activity
+            android:name=".features.activities.DateRangePickerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.colorfulMenuText.colorRed" />
+        <activity
+            android:name=".core.utils.LargeImageActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".core.utils.ImageTreatmentActivity"
+            android:excludeFromRecents="true" />
+
+
+        <activity
+            android:name=".features.workOrder.workorderguide.WorkOrderGuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".features.search.SearchActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+    </application>
+
+</manifest>

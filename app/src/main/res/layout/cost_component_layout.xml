@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="19dp"
+    android:layout_marginTop="0dp"
+    android:layout_marginRight="19dp"
+    android:layout_marginBottom="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/round_corners_background_color_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageViewCross"
+            android:layout_width="32dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_corners_background_color_off_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_cross_small" />
+
+        <EditText
+            android:id="@+id/etValue"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:fontFamily="@font/inter_regular"
+            android:hint="@string/cost"
+            android:inputType="number"
+            android:maxLines="1"
+            android:paddingStart="2dp"
+            android:singleLine="true"
+            android:textColor="@color/md_dark_green"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewCross"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/etDivider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="12dp"
+            android:background="#B8C7CC"
+            app:layout_constraintBottom_toBottomOf="@+id/etValue"
+            app:layout_constraintEnd_toEndOf="@+id/etValue"
+            app:layout_constraintStart_toStartOf="@+id/etValue" />
+
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:ellipsize="end"
+            android:fontFamily="@font/inter_regular"
+            android:hint="@string/enter_cost_title"
+            android:maxLines="1"
+            android:paddingStart="2dp"
+            android:singleLine="true"
+            android:textColor="@color/md_dark_green"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/etValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text=" Bad Spare Part" />
+
+        <View
+            android:id="@+id/tvDivider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="12dp"
+            android:background="#B8C7CC"
+            app:layout_constraintBottom_toBottomOf="@+id/etTitle"
+            app:layout_constraintEnd_toEndOf="@+id/etTitle"
+            app:layout_constraintStart_toStartOf="@+id/etTitle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

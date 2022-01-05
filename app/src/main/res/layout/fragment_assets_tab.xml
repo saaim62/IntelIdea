@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_blue_grey_50">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clFilterHeader"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <ImageView
+                android:id="@+id/tabTopBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/assetTabName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/assetTabName"
+                app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/assetTabName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/assets"
+                android:textColor="@color/md_dark_green"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bScanQR"
+                app:layout_constraintStart_toEndOf="@+id/tabTopBack"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/bScanQR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semi_bold"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bFilters"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_qr_20"
+                app:tint="@color/md_black"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/bFilters"
+                style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="20dp"
+                android:src="@drawable/ic_icon_filter_svg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivSearch"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/md_black"
+                tools:targetApi="p" />
+
+            <TextView
+                android:id="@+id/tvFilterCount"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/shape_rectangle_blue_radius_30dp"
+                android:gravity="center"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/md_white"
+                android:textFontWeight="700"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/bFilters"
+                app:layout_constraintStart_toStartOf="@+id/bFilters"
+                tools:targetApi="p" />
+
+            <ImageView
+                android:id="@+id/ivSearch"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="14dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewAssetTabProfile"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_search_v2_24"
+                app:tint="@color/md_black"
+                tools:ignore="ContentDescription" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/imageViewAssetTabProfile"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                fresco:placeholderImage="@drawable/ic_profile"
+                fresco:roundAsCircle="true" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/tvAssetTabRelationImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewAssetHierarchy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewAssetHierarchy"
+        app:srcCompat="@drawable/asset_name"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/textViewAssetHierarchy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="@color/md_dark_green"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvAssetTabRelationImg"
+        app:layout_constraintTop_toBottomOf="@+id/appbar"
+        tools:text="Factory  A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring whi  Air Conditioners - 2500000917" />
+
+    <TextView
+        android:id="@+id/tvAssetTabCountVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/inter_regular"
+        tools:text="0"
+        android:textColor="@color/md_dark_green"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/assetSortingCl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/assetSortingCl" />
+
+    <TextView
+        android:id="@+id/tvAssetTabCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/assets"
+        android:textColor="@color/md_dark_green"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAssetTabCountVal"
+        app:layout_constraintStart_toEndOf="@+id/tvAssetTabCountVal"
+        app:layout_constraintTop_toTopOf="@+id/tvAssetTabCountVal" />
+
+    <Spinner
+        android:id="@+id/assetLevelSpinner"
+        style="@style/SpinnerTextStyleAssetLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/spinner_background_all_edges_round"
+        android:elevation="-3dp"
+        android:gravity="start|center"
+        android:paddingStart="8dp"
+        android:paddingEnd="36dp"
+        android:translationZ="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAssetHierarchy" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/assetSortingCl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/assetLevelSpinner">
+
+        <TextView
+            android:id="@+id/tvSortBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/sort_by_colon"
+            android:textColor="@color/md_dark_green"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSortValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/inter_semi_bold"
+            android:text="@string/name"
+            android:textAllCaps="true"
+            android:textColor="@color/md_light_blue_500"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSortBy"
+            app:layout_constraintStart_toEndOf="@+id/tvSortBy"
+            app:layout_constraintTop_toTopOf="@+id/tvSortBy" />
+
+        <ImageView
+            android:id="@+id/ivArrowMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSortValue"
+            app:layout_constraintStart_toEndOf="@+id/tvSortValue"
+            app:layout_constraintTop_toTopOf="@+id/tvSortValue"
+            app:srcCompat="@drawable/ic_icon_arrow_up_16" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAssets"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/assetSortingCl" />
+
+    <ProgressBar
+        android:id="@+id/progressBarAssetFragmentTab"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

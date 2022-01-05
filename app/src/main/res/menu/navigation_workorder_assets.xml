@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_workorders"
+        android:icon="@drawable/selector_nav_wo"
+        android:title="@string/workorders" />
+
+
+    <item
+        android:id="@+id/navigation_assets"
+        android:icon="@drawable/selector_nav_assets"
+        android:title="@string/assets" />
+
+</menu>

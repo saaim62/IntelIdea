@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D039BE5">
+
+    <TextView
+        android:id="@+id/textViewInstruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:lineSpacingMultiplier="1.1"
+        android:padding="4dp"
+        android:text="You can update both reading types at once or just\none and leave the other field empty."
+        android:textColor="#B8C9CC"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/imageViewInfo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAssetName" />
+
+    <TextView
+        android:id="@+id/textViewMachineHoursLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/inter_regular"
+        android:paddingHorizontal="4dp"
+        android:text="Machine Hours"
+        android:textColor="@color/hint_text_color"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textViewMachineHoursValue"
+        app:layout_constraintTop_toBottomOf="@+id/textViewInstruction" />
+
+    <TextView
+        android:id="@+id/textViewPiecesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/inter_regular"
+        android:paddingHorizontal="4dp"
+        android:text="Pieces"
+        android:textColor="@color/hint_text_color"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textViewPiecesValue"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMachineHoursValue" />
+
+    <ImageView
+        android:id="@+id/imageViewMachineHour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewMachineHoursValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewMachineHoursValue"
+        app:srcCompat="@drawable/ic_meter_16"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/imageViewPieces"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewPiecesValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewPiecesValue"
+        app:srcCompat="@drawable/ic_meter_16" />
+
+    <ImageView
+        android:id="@+id/imageViewInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewInstruction"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewInstruction"
+        app:srcCompat="@drawable/ic_info_16"
+        tools:ignore="ContentDescription" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutAssetNameBackground"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="#26B8C9CC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAssetName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/inter_light"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@color/md_dark_green"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewAsset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewAsset"
+        app:layout_constraintTop_toTopOf="@+id/imageViewAsset"
+        tools:text="Super charged machine Super charged machine Super charged machine " />
+
+    <ImageView
+        android:id="@+id/imageViewAsset"
+        android:layout_width="34dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/ic_asset_small"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayoutAssetNameBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayoutAssetNameBackground"
+        tools:ignore="ContentDescription" />
+
+    <EditText
+        android:id="@+id/textViewMachineHoursValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Enter a value..."
+        android:inputType="number"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="@color/hint_text_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewMachineHour"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMachineHoursLabel"
+        tools:ignore="Autofill"
+        tools:text="Content Description Content Description Content Description wContent Description Content Description Content Description " />
+
+    <EditText
+        android:id="@+id/textViewPiecesValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Enter a value..."
+        android:inputType="number"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="@color/hint_text_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewPieces"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPiecesLabel"
+        tools:ignore="Autofill"
+        tools:text="Content Description Content Description Content Description Content Description Content Description Content Description " />
+
+    <ProgressBar
+        android:id="@+id/progressBarAssetAddReading"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

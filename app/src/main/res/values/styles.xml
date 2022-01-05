@@ -1,0 +1,78 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:dropDownListViewStyle">@style/SpinnerStyle</item>
+    </style>
+
+    <style name="SpinnerStyle" parent="Widget.AppCompat.ListView.DropDown">
+        <item name="android:divider">#d1d1d1</item>
+        <item name="android:dividerHeight">0.5dp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="AppTheme.noShadow" parent="AppTheme">
+        <!-- remove shadow below action bar -->
+        <!-- <item name="android:elevation">0dp</item> -->
+        <!-- Support library compatibility -->
+        <item name="elevation">0dp</item>
+        <!-- Remove shadow below action bar Android < 5.0 -->
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="AppTheme.colorfulMenuText.colorInfo" parent="AppTheme">
+        <item name="android:actionMenuTextColor">@color/Color.Info</item>
+    </style>
+
+    <style name="AppTheme.colorfulMenuText.colorRed" parent="AppTheme">
+        <item name="android:actionMenuTextColor">@color/Color.Red</item>
+    </style>
+
+    <style name="FilePickerTheme" parent="LibAppTheme">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/Color.Secondary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="SpinnerTextStyle">
+        <item name="android:padding">1dip</item>
+        <item name="android:textColor">@color/md_dark_green</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">start</item>
+    </style>
+
+    <style name="SpinnerTextStyleAssetLevel">
+        <item name="android:padding">1dip</item>
+        <item name="android:textColor">@color/md_black</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">#80039BE5</item>
+        <item name="android:textColor">#1A404D</item>
+        <item name="android:textColorAlertDialogListItem">#1A404D</item>
+        <item name="android:textColorSecondary">#80039BE5</item>
+        <item name="android:background">#FFFFFF</item>
+    </style>
+
+    <style name="buttonStyle" parent="@android:style/Widget.Button">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+</resources>

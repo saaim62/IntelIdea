@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivAsset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvAsset"
+            app:srcCompat="@drawable/ic_asset_small"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvAsset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center|start"
+            android:hint="@string/asset"
+            android:minWidth="86dp"
+            android:minHeight="48dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            app:layout_constraintStart_toEndOf="@+id/ivAsset"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/llDivider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/Color.Default"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAsset" />
+
+        <ImageView
+            android:id="@+id/ivTemplate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_templates"
+            app:srcCompat="@drawable/ic_workorder_small"
+            tools:ignore="ContentDescription" />
+
+        <com.example.fypintelidea.core.views.ConnectavoTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/request_template"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@+id/textView_templates"
+            app:layout_constraintTop_toBottomOf="@+id/llDivider"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/textView_templates"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/ivScanQr"
+            app:layout_constraintStart_toEndOf="@+id/ivTemplate"
+            app:layout_constraintTop_toBottomOf="@+id/llDivider" />
+
+        <ImageView
+            android:id="@+id/ivScanQr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_templates"
+            app:srcCompat="@drawable/ic_qr_icon_blue"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout_requestTemplateContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@+id/textView_templates"
+            app:layout_constraintStart_toStartOf="@+id/textView_templates"
+            app:layout_constraintTop_toBottomOf="@+id/textView_templates">
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etDescriptionLayout"
+            app:srcCompat="@drawable/ic_text_small"
+            tools:ignore="ContentDescription" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etDescriptionLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/ivSpeech"
+            app:layout_constraintStart_toEndOf="@+id/ivDescription"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout_requestTemplateContainer">
+
+            <EditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:hint="@string/description"
+                android:inputType="textMultiLine"
+                android:maxLines="3"
+                android:padding="8dp"
+                android:singleLine="false"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                tools:ignore="Autofill" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/ivSpeech"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etDescriptionLayout"
+            app:srcCompat="@drawable/ic_mic_blue_24dp"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/ivDocuments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvDocuments"
+            app:srcCompat="@drawable/ic_attachment_small"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvDocuments"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/inter_semi_bold"
+            android:padding="8dp"
+            android:text="@string/picture"
+            app:layout_constraintEnd_toStartOf="@+id/ivAddDocuments"
+            app:layout_constraintStart_toEndOf="@+id/ivDocuments"
+            app:layout_constraintTop_toBottomOf="@+id/etDescriptionLayout" />
+
+        <ImageView
+            android:id="@+id/ivAddDocuments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvDocuments"
+            app:srcCompat="@drawable/ic_stat_add_blue"
+            tools:ignore="ContentDescription" />
+
+        <GridLayout
+            android:id="@+id/glDocuments"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:columnCount="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvDocuments"
+            app:layout_constraintTop_toBottomOf="@+id/tvDocuments">
+
+        </GridLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBarNewTemplateRequest"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

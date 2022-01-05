@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/ic_action_scan"
+        android:orderInCategory="102"
+        android:icon="@drawable/ic_qr_20"
+        app:showAsAction="always"
+        android:title="qr scan" />
+</menu>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="324dp"
+    android:layout_height="212dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/sort_by"
+        android:textColor="@color/md_dark_green"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/rbName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/name"
+        android:textColor="@color/md_dark_green"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"/>
+
+    <RadioButton
+        android:id="@+id/rbDateCreated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/date_created"
+        android:textColor="@color/md_dark_green"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/rbName"
+        app:layout_constraintTop_toBottomOf="@+id/rbName" />
+
+    <ImageView
+        android:id="@+id/ivArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/round_corners_16dp_background"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/sorting_icon_arrow_down"
+        app:layout_constraintBottom_toBottomOf="@+id/rbName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rbName"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/ivArrow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/round_corners_16dp_background"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/rbDateCreated"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rbDateCreated"
+        app:srcCompat="@drawable/sorting_icon_arrow_down"
+        tools:ignore="ContentDescription" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/transparent"
+        android:fontFamily="@font/inter_semi_bold"
+        android:text="@string/cancel"
+        android:textColor="@color/hint_text_color"
+        app:layout_constraintEnd_toStartOf="@+id/btnApply"
+        app:layout_constraintStart_toEndOf="@+id/rbDateCreated"
+        app:layout_constraintTop_toBottomOf="@+id/rbDateCreated" />
+
+    <Button
+        android:id="@+id/btnApply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@color/transparent"
+        android:fontFamily="@font/inter_semi_bold"
+        android:text="@string/apply"
+        android:textColor="@color/md_light_blue_500"
+        app:layout_constraintBottom_toBottomOf="@+id/btnCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnCancel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

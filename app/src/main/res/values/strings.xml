@@ -1,0 +1,381 @@
+<resources>
+    <string name="app_name">Connectavo</string>
+    <string name="workorders">Work orders</string>
+    <string name="work_orders">Work orders</string>
+    <string name="filters">Filters</string>
+    <string name="request">Request</string>
+    <string name="requests">Requests</string>
+    <string name="workorder">Workorder</string>
+    <string name="new_request">New request</string>
+    <string name="enter_request_name">Enter a request name…</string>
+    <string name="description">Description</string>
+    <string name="enter_description">Enter a brief description</string>
+    <string name="enter_description_dot">Enter a brief description…</string>
+    <string name="tags">Tags:</string>
+    <string name="picture">Picture</string>
+
+    <string name="legal_information"><u>LEGAL INFORMATION</u></string>
+
+    <string name="imprint1" translatable="false">Die App wird betrieben durch die connectavo GmbH. Angaben gemäß § 5 TMG:\n\nconnectavo GmbH\nGreifswalder Str. 33a\n10405 Berlin\n\nWeb: www.connectavo.com\nE-Mail: info@connectavo.com\nTelefon: +49 30 398 209 72\n\nEintragen im Handelsregister: Amtsgericht München, Registernummer HRB 226261\n\nUmsatzsteuer-Identifikationsnummer gemäß §27 a\nUmsatzsteuergesetz:\nDE307018303</string>
+    <string name="imprint2" translatable="false">Haftung für Inhalte</string>
+    <string name="imprint3" translatable="false">Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte in dieser App nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</string>
+    <string name="datasecurity1" translatable="false">1. Allgemeines</string>
+    <string name="datasecurity2" translatable="false">Ihre personenbezogenen Daten (z.B. Anrede, Name, Anschrift, E-Mail-Adresse, Telefonnummer) werden von uns nur gemäß den Bestimmungen des deutschen Datenschutzrechts und des Datenschutzrechts der Europäischen Union (EU) verarbeitet. Die nachfolgenden Vorschriften informieren Sie neben den Verarbeitungszwecken, Empfängern, Rechtsgrundlagen, Speicherfristen auch über Ihre Rechte und den Verantwortlichen für Ihre Datenverarbeitung. Diese Datenschutzerklärung bezieht sich nur auf unsere Websites. Falls Sie über Links auf unseren Seiten auf andere Seiten weitergeleitet werden, informieren Sie sich bitte dort über den jeweiligen Umgang mit Ihren Daten.</string>
+    <string name="datasecurity3" translatable="false">2. Kontaktaufnahme</string>
+    <string name="datasecurity4" translatable="false">1) Verarbeitungszweck</string>
+    <string name="rationale_doc_picker">We need this pemission to read documents from device.</string>
+
+    <string-array name="employees">
+        <item>no internet</item>
+    </string-array>
+
+
+    <string name="new_work_order">New work order</string>
+    <string name="workorder_name">Workorder name*</string>
+    <string name="enter_workorder_name">Enter work order name…</string>
+    <string name="scan_qr" translatable="false">SCAN</string>
+    <string name="estimated_hours">Estimated time in hours...</string>
+    <string name="priority">Priority</string>
+    <string name="documents">Documents</string>
+    <string name="attachments">Attachments</string>
+    <string name="open">OPEN</string>
+    <string name="in_progress">IN-PROGRESS</string>
+    <string name="done">DONE</string>
+    <string name="workorder_id">Work order ID:</string>
+    <string name="team" translatable="false">Team:</string>
+    <string name="duedate">Due date*</string>
+    <string name="due_date">Due date:</string>
+    <string name="due_time_star">Due time*</string>
+    <string name="due_date_dialog">Due date</string>
+    <string name="show_more">SHOW MORE</string>
+    <string name="estimated">Estimated:</string>
+    <string name="estimated_time">Estimated time</string>
+    <string name="show_less">SHOW LESS</string>
+    <string name="comment_colon">Comment:</string>
+    <string name="draw_your_signature">Draw signature to complete workorder</string>
+    <string name="undo">Undo</string>
+
+    <string name="login">Login</string>
+    <string name="new_version_is_available_click_here">New Version is available. Click here</string>
+    <string name="workspace">Workspace:</string>
+    <string name="logout">LOGOUT</string>
+    <string name="upload">UPLOAD</string>
+    <string name="name">Name</string>
+    <string name="date_created">Date created</string>
+    <string name="name_star">Name*</string>
+    <string name="enter_your_name">Enter your name…</string>
+    <string name="enter_your_number">Enter your phone number…</string>
+    <string name="phone">Phone</string>
+    <string name="smart_maintenance_made_easy">Smart maintenance made easy</string>
+    <string name="checklist">Checklist:</string>
+    <string name="protocol">Protocol</string>
+    <string name="end_time">End time:</string>
+    <string name="signature">Signature:</string>
+    <string name="login_to_your_workspace">Login to your workspace</string>
+    <string name="workspace_name">Enter your company space…</string>
+    <string name="continue_button">CONTINUE</string>
+    <string name="learn_more">LEARN MORE</string>
+    <string name="do_you_want_to_enable_biometric_authentication">Do you want to enable Biometric Authentication?</string>
+
+    <string name="edit_profile">Edit profile</string>
+    <string name="number_is_empty">Number is empty!</string>
+    <string name="name_is_empty">Name is empty!</string>
+    <string name="select_asset">Select Asset</string>
+    <string name="scan_and_select_asset">Scan and select asset</string>
+    <string name="select_tags">Select Tags</string>
+    <string name="complete_workorder">Complete work order</string>
+    <string name="end_date_is_empty">End date is empty</string>
+    <string name="draw_signature">Draw Signature</string>
+    <string name="please_type_workspace_name">Please type workspace name</string>
+    <string name="minimum_2_characters">Minimum 2 characters</string>
+    <string name="imprint">IMPRINT</string>
+    <string name="data_security">DATA SECURITY</string>
+    <string name="end_date">End date*</string>
+    <string name="edit">EDIT</string>
+    <string name="save">SAVE</string>
+    <string name="profile">Profile</string>
+    <string name="invalid_email">Invalid email address</string>
+    <string name="invalid_password">Invalid password</string>
+    <string name="check_internet">Check internet connectivity</string>
+    <string name="Scanned_asset_not_found">No match found</string>
+    <string name="could_not_fetch_assets">Could not fetch Assets</string>
+    <string name="turn_on_wifi_or_mobile_data">Turn on wifi or Mobile Data</string>
+    <string name="invalid_email_password">Invalid email or password</string>
+    <string name="server_error">Server Error.</string>
+
+    <string name="poor_internet">Wrong workspace or Poor connectivity</string>
+    <string name="date">Date:</string>
+    <string name="requested">REQUESTED</string>
+    <string name="paused">PAUSED</string>
+    <string name="cancelled">CANCELED</string>
+    <string name="problem_colon">Problem:</string>
+    <string name="solution_colon">Solution:</string>
+    <string name="problem">Problem</string>
+    <string name="solution">Solution</string>
+    <string name="workorder_requests">Work Order Requests</string>
+    <string name="spartacus_text">ID Spartacus:</string>
+    <string name="something_wrong">Something went wrong</string>
+    <string name="access_denied">Access denied</string>
+    <string name="select_due_date_for_workorder">Select due date for workorder</string>
+    <string name="select_due_date">Select due date</string>
+    <string name="select_time">Select time</string>
+    <string name="asset_star" translatable="false">Asset*</string>
+    <string name="asset" translatable="false">Asset</string>
+    <string name="asset_colon" translatable="false">Asset:</string>
+    <string name="assets">Assets</string>
+    <string name="time_star">Time*</string>
+    <string name="employee_star">Employee*</string>
+    <string name="field_required">Field required</string>
+    <string name="clear">CLEAR</string>
+    <string name="date_firstCap">Date</string>
+    <string name="creation_date">Creation date</string>
+    <string name="select_employ_caps">Select Employees</string>
+    <string name="resp_employee">Responsible employee</string>
+    <string name="select_employees">Select employees</string>
+    <string name="select_employee">Select employee</string>
+    <string name="select_resp_employ">Select responsible employee</string>
+    <string name="select_category_caps">Select Category</string>
+    <string name="select_categories">Select categories</string>
+    <string name="team_star">Team*</string>
+    <string name="team_firstCap">Team</string>
+    <string name="select_teams">Select Teams</string>
+    <string name="resp_team">Responsible team</string>
+    <string name="select_resp_team">Select responsible team</string>
+    <string name="select_range_caps">Select Range</string>
+    <string name="SpareParts">Spare Parts:</string>
+    <string name="select_spare_parts">Select spare parts</string>
+    <string name="select_spare_part">Select spare part</string>
+    <string name="select_contributors">Select contributors</string>
+    <string name="select_contributor">Select contributor</string>
+    <string name="next">NEXT</string>
+    <string name="available">Available</string>
+    <string name="check_quantity">Check quantity</string>
+    <string name="quantity">Quantity</string>
+    <string name="successfully_updated">Successfully updated</string>
+    <string name="characters_only_1000">1000 characters only</string>
+    <string name="select_end_date">Select End Date</string>
+    <string name="select_end_time">Select_end_time</string>
+    <string name="tag_cap">Tag</string>
+    <string name="tags_cap">Tags</string>
+    <string name="hint_select_tags">Select one or more tags</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="password">Password</string>
+    <string name="spare_parts">Spare parts</string>
+    <string name="hint_select_spare_parts">Select one or more spare parts</string>
+    <string name="spare_parts_used">Spare parts used</string>
+    <string name="add_spare_part">Add spare part</string>
+    <string name="forgot_password_question_mark">Forgot password?</string>
+    <string name="status" translatable="false">status</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="dot_connectavo" translatable="false">.connectavo</string>
+    <string name="asset_name_lead_level_asset" translatable="false">Asset name really long / child asset</string>
+    <string name="work_order_assigned_to" translatable="false">Workorder Assigned to</string>
+    <string name="documents_colon">Documents:</string>
+    <string name="keep_track_of_workorders_and_performance">Intelligent maintenance made easy</string>
+    <string name="enlargement_is_disabled">Enlargement is disabled</string>
+    <string name="quantity_colon">Quantity:</string>
+    <string name="location_colon">Location:</string>
+    <string name="coming_soon">Coming soon...</string>
+    <string name="my_workorders">My work orders</string>
+    <string name="today">TODAY</string>
+    <string name="overdue">OVERDUE</string>
+    <string name="unplanned">UNPLANNED</string>
+    <string name="planned">PLANNED</string>
+    <string name="predictive">PREDICTIVE</string>
+    <string name="employee">Employee</string>
+    <string name="status_cap">Status</string>
+    <string name="category">Category</string>
+    <string name="apply_filters_uppercase">APPLY</string>
+    <string name="quick_selection">Quick selection</string>
+    <string name="could_not_fetch_requests">Could not fetch Requests</string>
+    <string name="could_not_fetch_workorders">Could not fetch Workorders</string>
+    <string name="could_not_fetch_tags">Could not fetch tags</string>
+    <string name="could_not_fetch_spareparts">Could not fetch spare parts</string>
+    <string name="camera_permission">We need permission to open camera</string>
+    <string name="cannot_complete_workorder">Cannot complete workorder</string>
+    <string name="please_fill_out_required_checklsit_fields">Please fill out required checklist fields</string>
+    <string name="please_fill_out_required_custom_fields">Please fill out required custom fields</string>
+    <string name="create_request">Create request</string>
+    <string name="checklist_all_caps">CHECKLIST</string>
+    <string name="details_all_caps">DETAILS</string>
+    <string name="great_poor">1-Great, 6-Poor"</string>
+    <string name="range">Range</string>
+    <string name="please_select_media">Please select media</string>
+    <string name="Max">Max</string>
+    <string name="images_allowed">images allowed</string>
+    <string name="characters_only_10000">10000 characters only</string>
+    <string name="enter_value_less_than_equal_to_1000000">Please enter a value less than or equal to 1000000</string>
+    <string name="enter_value_less_than_or_equal_to_999_99">Please enter a value less than or equal to 999.99</string>
+    <string name="not_all_required_custom_fields_are_filled">Not all required custom fields for work order are filled out</string>
+    <string name="privileges_changed">Privileges changed. Relaunching...</string>
+    <string name="type">Work order type</string>
+    <string name="dash" translatable="false">-</string>
+    <string name="_0" translatable="false">0</string>
+    <string name="exclamation_sign" translatable="false">!</string>
+    <string name="double_exclamation_sign" translatable="false">!!</string>
+    <string name="select">SELECT</string>
+    <string name="select_small_case">Select</string>
+    <string name="select_a_range">Select a range</string>
+    <string name="template">Template</string>
+    <string name="checklist_items_caps">CHECKLIST ITEMS</string>
+    <string name="connectavo_version">\© connectavo version</string>
+    <string name="FILTERS_0_caps">Filters (0)</string>
+    <string name="selected">selected</string>
+    <string name="select_one_or_more">Select one or more</string>
+    <string name="FILTERS_3_caps">Filters (3)</string>
+    <string name="at_connectavo" translatable="false">\© connectavo</string>
+    <string name="warning_required_fields_are_empty">Warning! required fields are empty</string>
+    <string name="please_scan_QR_code_of_asset_to_answer_this_section">Please scan QR code of asset to answer this section&#160;</string>
+    <string name="please_scan_QR_code_of_asset_to_answer_this_question">Please scan QR code of asset to answer this question&#160;</string>
+    <string name="asset_verified">Asset verified</string>
+    <string name="asset_not_verified">Asset not verified</string>
+    <string name="wrong_qr_code">Wrong QR Code</string>
+    <string name="include_assets_added_in_checklist">Include assets added in checklist</string>
+    <string name="include_children_assets">Include children assets</string>
+    <string name="assets_with_schedules">Assets with schedules</string>
+    <string name="select_status_caps">Select Status</string>
+    <string name="hours_spent">Hours spent</string>
+    <string name="hours_spent_star">Hours spent*</string>
+    <string name="hours_spent_colon">Hours spent:</string>
+    <string name="add_document_image">Add document image</string>
+    <string name="document_image">Document image</string>
+    <string name="information_sign">information sign</string>
+    <string name="speech_image">speech image</string>
+    <string name="_3_selected">3 selected</string>
+    <string name="add">ADD</string>
+
+    <string name="custom_status_requested">Requested</string>
+    <string name="custom_status_open">Open</string>
+    <string name="custom_status_cancelled">Cancelled</string>
+    <string name="custom_status_in_progress">In Progress</string>
+    <string name="custom_status_pause">Pause</string>
+    <string name="custom_status_archive">Archive</string>
+    <string name="custom_status_done">Done</string>
+
+    <string name="category_inspection">Inspection</string>
+    <string name="category_maintenance">Maintenance</string>
+    <string name="category_downtime">Downtime</string>
+    <string name="category_overhaul">OverHaul</string>
+    <string name="category_new_installation">New Installation</string>
+    <string name="category_retrofitting">Retrofitting</string>
+    <string name="category_calibration">Calibration</string>
+    <string name="category_improvement">Improvement</string>
+
+    <string name="add_annotation">Add Annotation</string>
+    <string name="no_images_selected_to_upload">No images selected to upload</string>
+    <string name="error">Error</string>
+    <string name="sorry_something_went_wrong">Sorry something went wrong!</string>
+    <string name="alert">Alert</string>
+    <string name="permission_denied_to_access_camera">Permission denied to access camera</string>
+    <string name="request_from_template">Request from template</string>
+    <string name="manual_request">Manual request</string>
+    <string name="please_select_template_first">Please select template first</string>
+    <string name="no_privileges_signing_out">No Privileges signing out...</string>
+    <string name="work_order">Work order</string>
+    <string name="created">created</string>
+    <string name="_100_characters_only">100 characters only</string>
+    <string name="device_doesnt_support_speech_input">Device doesn\'t support speech input</string>
+    <string name="request_template">Request template*</string>
+    <string name="_500_characters_only">500 characters only</string>
+    <string name="select_request_template">SELECT REQUEST TEMPLATE</string>
+    <string name="create_manual_request">CREATE MANUAL REQUEST</string>
+    <string name="or">or</string>
+    <string name="template_details">TEMPLATE DETAILS</string>
+    <string name="assignee">Assignee</string>
+    <string name="employee_colon">Employee:</string>
+    <string name="team_colon">Team:</string>
+    <string name="due_within">Due within:</string>
+    <string name="priority_colon">Priority:</string>
+    <string name="eta_colon">ETA:</string>
+    <string name="category_colon">Category:</string>
+    <string name="description_colon">Description:</string>
+    <string name="tags_colon">Tags:</string>
+    <string name="spare_parts_colon">Spare parts:</string>
+    <string name="checklist_colon">Checklist:</string>
+    <string name="other_costs">Other costs:</string>
+    <string name="contributor">Contributor:</string>
+    <string name="hours">Hours</string>
+    <string name="add_other_costs">OTHER EXPENSES</string>
+    <string name="add_contributor">Contributors</string>
+    <string name="cost_in_eur">Cost</string>
+    <string name="cost_title">Cost title</string>
+    <string name="enter_cost_title">Enter cost title</string>
+    <string name="cost">Cost</string>
+    <string name="changing_status_to_open">Changing status to open</string>
+    <string name="changing_status_to_inprogress">Changing status to in-progress</string>
+    <string name="changing_status_to_pause">Changing status to paused</string>
+    <string name="changing_status_to_done">Changing status to done</string>
+    <string name="a_signature_is_required">A signature is required</string>
+    <string name="select_an_asset">Select an asset</string>
+    <string name="days">days</string>
+    <string name="_4_characters_only">4 characters only</string>
+    <string name="please_fill_out">Please fill out</string>
+    <string name="required_fields_under_show_more">required field(s) under show more</string>
+    <string name="checklist_templates">Checklist Templates</string>
+    <string name="new_workorder_created">New workorder created</string>
+    <string name="attachment_size_too_large">Attachment size too large</string>
+    <string name="search_request_template">Search request template</string>
+    <string name="completed">Completed</string>
+    <string name="add_image">ADD IMAGE</string>
+    <string name="add_a_comment">Add a comment...</string>
+    <string name="give_your_answer_here">Give your answer here...</string>
+    <string name="give_your_numeric_answer_here">Give your numeric answer here...</string>
+    <string name="document">Document</string>
+    <string name="article_link">Article Link</string>
+    <string name="article">Article</string>
+    <string name="key_words">KEY WORDS:</string>
+    <string name="spare_parts_caps_colon">SPARE PARTS:</string>
+    <string name="expert_caps_colon">EXPERT:</string>
+    <string name="checklist_checkbox_done">Done</string>
+    <string name="of">of</string>
+    <string name="guide">Guide</string>
+    <string name="comment">Comment</string>
+
+    <string name="no_solution_provided">No solution provided</string>
+    <string name="no_problem_provided">"No problem provided."</string>
+    <string name="no_comment_provided">"No comment provided."</string>
+    <string name="created_at">Created at:</string>
+    <string name="assignee_colon">Assignee:</string>
+    <string name="most_recent">Most recent</string>
+    <string name="sort_by_colon">Sort by:</string>
+    <string name="sort_by">Sort by</string>
+    <string name="jason_borne_slanki_h">Jason Borne, Slanki hi</string>
+    <string name="recommendations">%d recommendations</string>
+    <string name="recommendation">%d recommendation</string>
+    <string name="zeroRecommendation">0 recommendation</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
+    <string name="child_assets">Child assets</string>
+    <string name="machine_reading">Machine reading</string>
+    <string name="add_reading">add reading</string>
+    <string name="children_assets">children assets</string>
+    <string name="login_with_touch_id">Login with Touch ID</string>
+    <string name="sure">SURE</string>
+    <string name="no">NO</string>
+    <string name="change">CHANGE</string>
+    <string name="not_the_right_workspace">Not the right workspace?</string>
+    <string name="enter_your_email">Enter your email…</string>
+    <string name="enter_password">Enter password…</string>
+    <string name="enter_total_time_spent">Enter total time spent…</string>
+    <string name="date_created_colon">Date created:</string>
+    <string name="scan_code_colon">Scan code:</string>
+    <string name="schedules">Schedules:</string>
+    <string name="briefly_describe_the_problem">Briefly describe the problem…</string>
+    <string name="briefly_describe_the_solution">Briefly describe the solution used…</string>
+    <string name="enter_a_brief_comment">Enter a brief comment…</string>
+    <string name="custom_field_1">Custom field 1</string>
+    <string name="custom_field_2">Custom field 2</string>
+
+
+    <string name="imageViewCross" translatable="false">imageViewCross</string>
+    <string name="imageViewIcon" translatable="false">imageViewIcon</string>
+    <string name="tvName" translatable="false">tvName</string>
+    <string name="spinner" translatable="false">spinner</string>
+    <string name="editTextValue" translatable="false">editTextValue</string>
+    <string name="editTextTitle" translatable="false">editTextTitle</string>
+    <string name="divider" translatable="false">divider</string>
+    <string name="scan_code_for_associated_asset_to_unlock_this_question">Scan code for associated asset to unlock this question</string>
+    <string name="scan_code_for_associated_asset_to_unlock_this_section">Scan code for associated asset to unlock this section</string>
+    <string name="enter_answer_here">Enter answer here…</string>
+    <string name="enter_number_here">Enter number here…</string>
+</resources>

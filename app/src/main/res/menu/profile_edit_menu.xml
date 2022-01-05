@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:itemIconSize="12dp"
+    tools:ignore="ExtraText">
+    <item
+        android:id="@+id/ic_action_edit"
+        android:icon="@drawable/ic_icon_edit_20"
+        android:orderInCategory="100"
+        android:title="@string/edit"
+        app:itemIconSize="10dp"
+        app:showAsAction="always"/>
+</menu>

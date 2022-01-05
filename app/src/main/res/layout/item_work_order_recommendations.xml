@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/_12sdp"
+    android:paddingTop="@dimen/_15sdp"
+    android:paddingRight="@dimen/_12sdp"
+    android:paddingBottom="@dimen/_25sdp">
+
+    <RelativeLayout
+        android:id="@+id/rlRecommendationHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:background="@drawable/background_guide_header"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView_tick"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:srcCompat="@drawable/ic_workorder_small_svg"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvRecommendationName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="8dp"
+            android:layout_toStartOf="@+id/ivBadge"
+            android:layout_toEndOf="@+id/imageView_tick"
+            android:fontFamily="@font/inter_medium"
+            android:singleLine="true"
+            android:textColor="@color/md_black"
+            android:textSize="@dimen/_14sdp"
+            tools:text="@string/work_order" />
+
+        <ImageView
+            android:id="@+id/ivBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_toStartOf="@+id/llDottedView"
+            app:srcCompat="@drawable/ic_badge_svg"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:id="@+id/llDottedView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_7sdp"
+            android:orientation="horizontal" />
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clRecommendationAssets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rlRecommendationHeader">
+
+        <TextView
+            android:id="@+id/tvAssetName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="8dp"
+            android:drawableStart="@drawable/ic_asset_small"
+            android:drawablePadding="@dimen/_5sdp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/asset_name_lead_level_asset"
+            android:textColor="@color/md_grey_600"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivThumbUp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivThumbUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:layout_toStartOf="@+id/ivThumbDown"
+            android:src="@drawable/ic_thumbs_up"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivThumbDown"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/ivThumbDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_thumbs_down"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvRecommendationHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/problem"
+        android:textAllCaps="true"
+        android:textColor="@color/md_black"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clRecommendationAssets" />
+
+    <TextView
+        android:id="@+id/tvRecommendationDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/inter_regular"
+        android:text="Lorem ipsum doler sit anum. Hello world haru kora sti anum, also no body have this power. You are black listed."
+        android:textColor="@color/md_black"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRecommendationHeading" />
+
+    <TextView
+        android:id="@+id/tvRecommendationHeadingSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/solution"
+        android:textAllCaps="true"
+        android:textColor="@color/md_black"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRecommendationDescription" />
+
+    <TextView
+        android:id="@+id/tvRecommendationDescriptionSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/inter_regular"
+        android:text="Lorem ipsum doler sit anum. Hello world haru kora sti anum, also no body have this power. You are black listed."
+        android:textColor="@color/md_black"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRecommendationHeadingSecond" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

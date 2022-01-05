@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:width="10dp" android:height="10dp" android:left="@dimen/_2sdp" android:gravity="top">
+        <bitmap android:gravity="fill" android:src="@drawable/ic_asterisk_black_16" android:tint="#FF3636" android:mipMap="true"/>
+    </item>
+</layer-list>

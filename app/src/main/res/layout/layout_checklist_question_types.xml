@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutErrorField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="14dp"
+            android:paddingStart="16dp">
+
+            <TextView
+                android:id="@+id/ivItemErrorField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="@string/please_fill_out_required_checklsit_fields"
+                android:textColor="@color/md_dark_green"
+                android:textSize="16sp"
+                android:drawablePadding="4dp"
+                android:drawableEnd="@drawable/ic_alert_small_red"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clCardMiddle" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutCheckbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="14dp"
+            android:paddingStart="16dp">
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="@string/done"
+                android:textColor="@color/md_dark_green"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clCardMiddle" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp"
+            android:paddingStart="16dp">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:text="Your answer"
+                android:textColor="@color/hint_text_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+
+            <EditText
+                android:id="@+id/editTextItemAnswer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:fontFamily="@font/inter_regular"
+                android:hint="@string/enter_answer_here"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/hint_text_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutNumberField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp"
+            android:paddingStart="16dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:text="Your answer"
+                android:textColor="@color/hint_text_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+
+            <EditText
+                android:id="@+id/editTextItemNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:fontFamily="@font/inter_regular"
+                android:hint="@string/enter_number_here"
+                android:inputType="number"
+                android:textColorHint="@color/hint_text_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp"
+            android:paddingStart="16dp">
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutMultiSelectCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/llItemCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp"
+            android:paddingStart="16dp">
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutRange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp"
+            android:paddingStart="4dp">
+
+            <TextView
+                android:id="@+id/seekBarVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semi_bold"
+                tools:text="40"
+                android:textColor="@color/md_light_blue_500"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/seekBar" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Select from"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="-"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/tvMin"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:fontFamily="@font/inter_regular"
+                tools:text="100"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/textView32"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/inter_regular"
+                tools:text="1"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/textView28"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                tools:progress="50"
+                app:layout_constraintEnd_toStartOf="@+id/seekBarVal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView28" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp"
+            android:paddingStart="16dp">
+
+            <TextView
+                android:id="@+id/tvScore1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/full_round_corners"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="1"
+                android:textColor="@color/md_dark_green"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvScore6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/full_round_corners"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="6"
+                android:textColor="@color/md_dark_green"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvScore5"
+                app:layout_constraintStart_toEndOf="@+id/tvScore5"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvScore5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/full_round_corners"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="5"
+                android:textColor="@color/md_dark_green"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvScore4"
+                app:layout_constraintStart_toEndOf="@+id/tvScore4"
+                app:layout_constraintTop_toTopOf="@+id/tvScore4" />
+
+            <TextView
+                android:id="@+id/tvScore4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/full_round_corners"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="4"
+                android:textColor="@color/md_dark_green"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvScore3"
+                app:layout_constraintStart_toEndOf="@+id/tvScore3"
+                app:layout_constraintTop_toTopOf="@+id/tvScore3" />
+
+            <TextView
+                android:id="@+id/tvScore3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/full_round_corners"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="3"
+                android:textColor="@color/md_dark_green"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvScore2"
+                app:layout_constraintStart_toEndOf="@+id/tvScore2"
+                app:layout_constraintTop_toTopOf="@+id/tvScore2" />
+
+            <TextView
+                android:id="@+id/tvScore2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/full_round_corners"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="2"
+                android:textColor="@color/md_dark_green"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvScore1"
+                app:layout_constraintStart_toEndOf="@+id/tvScore1"
+                app:layout_constraintTop_toTopOf="@+id/tvScore1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/linearLayoutItemButton"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:visibility="gone"-->
+    <!--        tools:visibility="visible">-->
+
+    <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="vertical"-->
+    <!--            android:padding="14dp"-->
+    <!--            android:paddingStart="16dp">-->
+
+    <!--            <Button-->
+    <!--                android:id="@+id/itemButton"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:background="@drawable/round_corners_background_color_white"-->
+    <!--                android:drawableStart="@drawable/icon_filter"-->
+    <!--                android:drawableTint="@color/md_light_blue_500"-->
+    <!--                android:fontFamily="@font/inter_semi_bold"-->
+    <!--                android:padding="8dp"-->
+    <!--                android:text="ATTACH IMAGE"-->
+    <!--                android:textColor="@color/md_light_blue_500"-->
+    <!--                android:textSize="14sp"-->
+    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent"-->
+    <!--                app:srcCompat="@drawable/round_corners_16dp_background" />-->
+
+    <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--    </LinearLayout>-->
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/linearLayoutItemSwitchButton"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:visibility="gone"-->
+    <!--        tools:visibility="visible">-->
+
+    <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="vertical"-->
+    <!--            android:padding="14dp"-->
+    <!--            android:paddingStart="16dp">-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/itemSwitchButtonText"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginStart="8dp"-->
+    <!--                android:fontFamily="@font/inter_regular"-->
+    <!--                android:text="Create work order request"-->
+    <!--                android:textColor="@color/md_black"-->
+    <!--                android:textSize="16sp"-->
+    <!--                app:layout_constraintBottom_toBottomOf="@+id/itemSwitchButton"-->
+    <!--                app:layout_constraintStart_toEndOf="@+id/itemSwitchButton"-->
+    <!--                app:layout_constraintTop_toTopOf="@+id/itemSwitchButton" />-->
+
+    <!--            <androidx.appcompat.widget.SwitchCompat-->
+    <!--                android:id="@+id/itemSwitchButton"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent"-->
+    <!--                tools:ignore="UseSwitchCompatOrMaterialXml" />-->
+    <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--    </LinearLayout>-->
+</LinearLayout>
+
+

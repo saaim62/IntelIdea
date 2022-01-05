@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Color.Background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="@string/name"
+            app:layout_constraintBottom_toBottomOf="@+id/etName"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etName"
+            app:srcCompat="@drawable/ic_workorder_small" />
+
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/inter_medium"
+            android:hint="@string/enter_workorder_name"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:paddingStart="4dp"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivName"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="@string/status"
+            app:layout_constraintBottom_toBottomOf="@+id/spStatus"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/spStatus"
+            app:srcCompat="@drawable/ic_category_small" />
+
+        <com.example.fypintelidea.core.views.ConnectavoTextView
+            android:id="@+id/connectavoTextView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/status_cap"
+            android:textColor="@color/hint_text_color"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/spStatus"
+            app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+        <com.example.fypintelidea.core.views.ConnectavoTextView
+            android:id="@+id/connectavoTextView7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/name_star"
+            android:textColor="@color/hint_text_color"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/etName"
+            app:layout_constraintStart_toStartOf="@+id/etName" />
+
+
+        <Spinner
+            android:id="@+id/spStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:padding="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivCategory"
+            app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+        <ImageView
+            android:id="@+id/ivEmploy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/employee"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvEmployee"
+            app:srcCompat="@drawable/ic_assignee_small" />
+
+        <ImageView
+            android:id="@+id/ivEmploy2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="18dp"
+            android:contentDescription="@string/employee"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTeam"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTeam"
+            app:srcCompat="@drawable/icon_team" />
+
+        <com.example.fypintelidea.core.views.ConnectavoTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/employee_star"
+            android:textColor="@color/hint_text_color"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvEmployee"
+            app:layout_constraintStart_toStartOf="@+id/tvEmployee" />
+
+        <TextView
+            android:id="@+id/tvEmployee"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:hint="Select responsible employee"
+            android:paddingStart="8dp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/hint_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/ivEmploy"
+            app:layout_constraintTop_toBottomOf="@+id/divider11"
+            tools:ignore="RtlCompat,RtlSymmetry" />
+
+        <com.example.fypintelidea.core.views.ConnectavoTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/team_star"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvTeam"
+            app:layout_constraintStart_toStartOf="@+id/tvTeam" />
+
+        <com.example.fypintelidea.core.views.ConnectavoTextView
+            android:id="@+id/tvTeam"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:drawableEnd="@drawable/ic_arrow_dropdown_grey"
+            android:fontFamily="@font/inter_medium"
+            android:gravity="center|start"
+            android:hint="@string/select_resp_team"
+            android:minWidth="86dp"
+            android:minHeight="48dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvEmployee"
+            app:layout_constraintTop_toBottomOf="@+id/divider15" />
+
+        <ImageView
+            android:id="@+id/ivCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/category"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/spCategory"
+            app:srcCompat="@drawable/ic_category_small" />
+
+        <com.example.fypintelidea.core.views.ConnectavoTextView
+            android:id="@+id/connectavoTextView6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/category"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/spCategory"
+            app:layout_constraintStart_toStartOf="@+id/spCategory" />
+
+        <com.example.fypintelidea.core.views.ConnectavoTextView
+            android:id="@+id/connectavoTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/description"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/etDescription"
+            app:layout_constraintStart_toStartOf="@+id/etDescription" />
+
+        <Spinner
+            android:id="@+id/spCategory"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivCategory"
+            app:layout_constraintTop_toBottomOf="@+id/divider14" />
+
+        <ImageView
+            android:id="@+id/ivDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etDescription"
+            app:srcCompat="@drawable/ic_text_small" />
+
+
+        <com.example.fypintelidea.core.views.ConnectavoEditText
+            android:id="@+id/etDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:ems="10"
+            android:fontFamily="@font/inter_medium"
+            android:hint="@string/enter_description"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:padding="8dp"
+            android:singleLine="false"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/ivDescription"
+            app:layout_constraintTop_toBottomOf="@+id/spCategory" />
+
+        <ImageView
+            android:id="@+id/ivSpeech"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:contentDescription="@string/speech_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etDescription"
+            app:srcCompat="@drawable/ic_mic_blue_24dp" />
+
+        <ImageView
+            android:id="@+id/ivTags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/tags"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTags"
+            app:srcCompat="@drawable/ic_tag_small" />
+
+        <com.example.fypintelidea.core.views.ConnectavoTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/tags"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvTags"
+            app:layout_constraintStart_toStartOf="@+id/tvTags" />
+
+        <com.example.fypintelidea.core.views.ConnectavoTextView
+            android:id="@+id/tvTags"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:drawableEnd="@drawable/ic_arrow_dropdown_grey"
+            android:fontFamily="@font/inter_medium"
+            android:gravity="center|start"
+            android:hint="@string/hint_select_tags"
+            android:minWidth="86dp"
+            android:minHeight="48dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/ivTags"
+            app:layout_constraintTop_toBottomOf="@+id/etDescription" />
+
+        <ImageView
+            android:id="@+id/ivDocuments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:contentDescription="@string/document_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvDocuments"
+            app:srcCompat="@drawable/ic_attachment_small" />
+
+        <com.example.fypintelidea.core.views.ConnectavoTextView
+            android:id="@+id/tvDocuments"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/inter_semi_bold"
+            android:padding="8dp"
+            android:text="@string/attachments"
+            android:textColor="@color/md_dark_green"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/ivAddDocuments"
+            app:layout_constraintStart_toEndOf="@+id/ivDocuments"
+            app:layout_constraintTop_toBottomOf="@+id/divider19" />
+
+        <ImageView
+            android:id="@+id/ivAddDocuments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:contentDescription="@string/add_document_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvDocuments"
+            app:srcCompat="@drawable/ic_stat_add_blue" />
+
+        <GridLayout
+            android:id="@+id/glDocuments"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:columnCount="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvDocuments"
+            app:layout_constraintTop_toBottomOf="@+id/tvDocuments" />
+
+        <ProgressBar
+            android:id="@+id/progressBarNewWorkOrder"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider11"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/light_black"
+            app:layout_constraintBottom_toBottomOf="@+id/spStatus"
+            app:layout_constraintEnd_toEndOf="@+id/spStatus"
+            app:layout_constraintStart_toStartOf="@+id/spStatus" />
+
+        <View
+            android:id="@+id/divider19"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/light_black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTags"
+            app:layout_constraintEnd_toEndOf="@+id/tvTags"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/tvTags" />
+
+        <View
+            android:id="@+id/divider14"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/light_black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTeam"
+            app:layout_constraintEnd_toEndOf="@+id/tvTeam"
+            app:layout_constraintStart_toStartOf="@+id/tvTeam" />
+
+        <View
+            android:id="@+id/divider15"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/light_black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvEmployee"
+            app:layout_constraintEnd_toEndOf="@+id/tvEmployee"
+            app:layout_constraintStart_toStartOf="@+id/tvEmployee" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
