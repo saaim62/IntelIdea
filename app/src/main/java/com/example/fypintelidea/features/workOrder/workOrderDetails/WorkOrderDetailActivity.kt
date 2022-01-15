@@ -83,8 +83,6 @@ class WorkOrderDetailActivity : ConnectavoBaseActivity() {
                     workOrder.category?.let { ConstantsCategories.getUserFriendlyName(this, it) }
             }
 
-            tvAssetName?.text = workOrder.asset_name
-
             if (workOrder.a_type != null) {
                 tvType.text = ConstantsWOType.getUserFriendlyName(this, workOrder.a_type!!)
                 when (workOrder.a_type) {

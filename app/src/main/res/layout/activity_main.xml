@@ -83,7 +83,7 @@
             android:src="@drawable/ic_stat_check_dark"
             app:fab_colorNormal="@color/md_white"
             app:fab_colorPressed="@color/Color.Info"
-            fab:fab_label="@string/workorder"
+            fab:fab_label="@string/ideas"
             fab:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton

@@ -3,7 +3,6 @@ package com.example.fypintelidea.features.workOrder
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
@@ -15,17 +14,17 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.fypintelidea.core.providers.models.Asset
-import com.example.fypintelidea.core.providers.models.Status
-import com.example.fypintelidea.core.providers.models.Workorder
-import com.example.fypintelidea.core.views.ConstantsWOType
-import com.example.fypintelidea.features.custom_status.CustomStatusAdapter
 import com.example.fypintelidea.R
 import com.example.fypintelidea.core.ConstantsCategories
 import com.example.fypintelidea.core.ConstantsStatuses
 import com.example.fypintelidea.core.permissions.PermissionsHelper
+import com.example.fypintelidea.core.providers.models.Asset
+import com.example.fypintelidea.core.providers.models.Status
+import com.example.fypintelidea.core.providers.models.Workorder
 import com.example.fypintelidea.core.utils.MyDateTimeStamp
 import com.example.fypintelidea.core.utils.Utils
+import com.example.fypintelidea.core.views.ConstantsWOType
+import com.example.fypintelidea.features.custom_status.CustomStatusAdapter
 import com.example.fypintelidea.features.workOrder.workOrderCompletion.WorkOrderCompleteActivity
 import com.example.fypintelidea.features.workOrder.workOrderDetails.WorkOrderDetailActivity
 import java.io.Serializable
@@ -56,25 +55,11 @@ class WorkOrderAdapter(
         holder.tvAssignee.text = workOrder.assignee
         holder.tvName.text = workOrder.name
 
-        totalAssets?.let { totalAssets ->
-            assetNames.clear()
-            holder.textViewAssetHierarchy.text = ""
-            val hierarchyAssetNames = findTopLevelParent(
-                totalAssets,
-                workOrder.asset_id!!
-            )
-            hierarchyAssetNames?.let {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    holder.textViewAssetHierarchy.text =
-                        java.lang.String.join(" / ", hierarchyAssetNames)
-                } else {
-                    val sb = StringBuilder(100)
-                    for (element in hierarchyAssetNames) {
-                        sb.append(element).append(" / ")
-                    }
-                    holder.textViewAssetHierarchy.text = sb
-                }
-            }
+        if (!workOrder.description.isNullOrEmpty()) {
+            holder.textViewAssetHierarchy.text = workOrder.description
+        } else {
+            holder.ivAsset.visibility = View.GONE
+            holder.textViewAssetHierarchy.visibility = View.GONE
         }
 
         workOrder.category?.let {
@@ -130,11 +115,11 @@ class WorkOrderAdapter(
                 R.color.Color_Default
             )
         )
-        if (workOrder.due_date != null) {
-            if (!workOrder.due_date.equals("0", ignoreCase = true)) {
+        if (workOrder.created_at != null) {
+            if (!workOrder.created_at.equals("0", ignoreCase = true)) {
                 val dueDateFormatted =
                     MyDateTimeStamp.getDateTimeFormattedStringFromMilliseconds(
-                        java.lang.Long.valueOf(workOrder.due_date!!)
+                        java.lang.Long.valueOf(workOrder.created_at!!)
                     )
                 holder.tvDueDate.text = dueDateFormatted
                 if (Calendar.getInstance().time.after(
@@ -347,6 +332,7 @@ class WorkOrderAdapter(
         internal val tvType: TextView = v.findViewById(R.id.tvType)
         internal var tvCategory: TextView = v.findViewById(R.id.tvCategory)
         internal val textViewAssetHierarchy: TextView = v.findViewById(R.id.textViewAssetHierarchy)
+        internal val ivAsset: ImageView = v.findViewById(R.id.imageView2)
         internal val tvDueDate: TextView = v.findViewById(R.id.tvDueDate)
         internal val llPriority: LinearLayout = v.findViewById(R.id.llPriority)
         internal val tvPriority: TextView = v.findViewById(R.id.tvPriority)

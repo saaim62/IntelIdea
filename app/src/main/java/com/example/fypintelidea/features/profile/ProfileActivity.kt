@@ -2,7 +2,6 @@ package com.example.fypintelidea.features.profile
 
 import android.app.Activity
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -11,7 +10,6 @@ import com.example.fypintelidea.R
 import com.example.fypintelidea.core.ConnectavoBaseActivity
 import com.example.fypintelidea.core.providers.models.UserProfileResponse
 import com.example.fypintelidea.core.session.SessionManager
-import com.example.fypintelidea.core.session.SessionManager.Companion.KEY_LOGIN_SUBDOMAIN
 import com.example.fypintelidea.core.utils.MyDateTimeStamp
 import com.example.fypintelidea.features.on_boarding.WelcomeActivity
 import com.google.common.base.CaseFormat
@@ -21,7 +19,6 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_new_template_request.*
 import kotlinx.android.synthetic.main.activity_profile.*
-import kotlinx.android.synthetic.main.activity_profile.tvSubdomain
 import org.koin.android.ext.android.inject
 
 class ProfileActivity : ConnectavoBaseActivity() {
@@ -42,15 +39,6 @@ class ProfileActivity : ConnectavoBaseActivity() {
             setResult(Activity.RESULT_OK, null)
             startActivity(Intent(this@ProfileActivity, WelcomeActivity::class.java))
             finish()
-        }
-
-        try {
-            val currentVersionName =
-                this.packageManager.getPackageInfo(this.packageName, 0).versionName
-            tvCopyRightVersion.text =
-                getString(R.string.connectavo_version) + " " + currentVersionName
-        } catch (e: PackageManager.NameNotFoundException) {
-            e.printStackTrace()
         }
 
         fetchUserProfile(sessionManager.getString(SessionManager.KEY_LOGIN_ID))
@@ -144,16 +132,6 @@ class ProfileActivity : ConnectavoBaseActivity() {
             tvNumber?.visibility = View.GONE
         }
         tvEmail?.text = sessionManager.getString(SessionManager.KEY_LOGIN_EMAIL)
-        if (sessionManager.getString(KEY_LOGIN_SUBDOMAIN) != null && !sessionManager.getString(
-                KEY_LOGIN_SUBDOMAIN
-            ).equals(
-                "",
-                ignoreCase = true
-            )
-        ) {
-            tvSubdomain?.text =
-                sessionManager.getString(KEY_LOGIN_SUBDOMAIN) + resources.getString(R.string.dot_connectavo)
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

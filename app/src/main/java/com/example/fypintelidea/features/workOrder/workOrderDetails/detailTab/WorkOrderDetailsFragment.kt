@@ -5,23 +5,16 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
-import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
-import com.example.fypintelidea.core.views.CustomImageViewCancelable
 import com.example.fypintelidea.R
 import com.example.fypintelidea.core.ConnectavoBaseFragment
-import com.example.fypintelidea.core.Constants
-import com.example.fypintelidea.core.glide
 import com.example.fypintelidea.core.providers.models.*
 import com.example.fypintelidea.core.services.ApiClient
 import com.example.fypintelidea.core.services.ApiInterface
@@ -29,10 +22,10 @@ import com.example.fypintelidea.core.session.SessionManager
 import com.example.fypintelidea.core.utils.ImageTreatmentActivity
 import com.example.fypintelidea.core.utils.MyDateTimeStamp
 import com.example.fypintelidea.core.utils.Utils
+import com.example.fypintelidea.core.views.CustomImageViewCancelable
 import com.example.fypintelidea.core.views.DynamicViews
 import com.example.fypintelidea.features.DocAdapter
 import com.example.fypintelidea.features.workOrder.workOrderDetails.WorkOrderDetailActivity
-import com.example.fypintelidea.features.workOrder.workorderguide.WorkOrderGuideActivity
 import com.google.gson.JsonObject
 import droidninja.filepicker.FilePickerBuilder
 import droidninja.filepicker.FilePickerConst
@@ -83,23 +76,6 @@ class WorkOrderDetailsFragment : ConnectavoBaseFragment(), EasyPermissions.Permi
             // ID
             tvWorkorderIdValue.text = workorder?.sequence_id
 
-            //Spartacus
-            val sessionManager = SessionManager(activity)
-            tvSpartacus.visibility = View.GONE
-            tvSpartacusValue.visibility = View.GONE
-            if (SessionManager(activity).getString(SessionManager.KEY_COMPANY_TYPE) != null) {
-                if (SessionManager(activity).getString(SessionManager.KEY_COMPANY_TYPE).equals(
-                        Company.COMPANY_TYPE_PROPERTY,
-                        ignoreCase = true
-                    )
-                ) {
-                    tvSpartacus.visibility = View.VISIBLE
-                    tvSpartacusValue.visibility = View.VISIBLE
-                    if (workorder?.id_spartacus != null) {
-                        tvSpartacusValue.text = workorder?.id_spartacus
-                    }
-                }
-            }
 
             //RESPONSIBLE
             if (workorder?.assigned_to != null) {
@@ -117,33 +93,6 @@ class WorkOrderDetailsFragment : ConnectavoBaseFragment(), EasyPermissions.Permi
             // TEAM
             fetchTeamsAndPopulate()
 
-            //DueDate
-            if (workorder?.due_date != null) {
-                if (!workorder?.due_date.equals("0", ignoreCase = true)) {
-                    val dueDateFormatted =
-                        MyDateTimeStamp.getDateTimeFormattedStringFromMilliseconds(
-                            java.lang.Long.valueOf(workorder?.due_date!!)
-                        )
-                    tvDueDateValue.text = dueDateFormatted
-                    if (Calendar.getInstance().time.after(
-                            MyDateTimeStamp.dateTimeStringToDate(
-                                dueDateFormatted
-                            )
-                        )
-                    ) {
-                        tvDueDateValue.setTextColor(
-                            ContextCompat.getColor(
-                                activity,
-                                R.color.Color_Red
-                            )
-                        )
-                    }
-                } else {
-                    tvDueDateValue.text = "-"
-                }
-            } else {
-                tvDueDateValue.text = "-"
-            }
 
             //CreatedAt
             val createdAtFormatted =
@@ -209,394 +158,14 @@ class WorkOrderDetailsFragment : ConnectavoBaseFragment(), EasyPermissions.Permi
                 }
             }
 
-            //Spare Parts
-            if (!workorder?.status.equals(Workorder.WORKORDER_STATUS_DONE, ignoreCase = true)) {
-                if (workorder?.spareParts != null) {
-                    val mySpareParts = workorder?.spareParts
-                    if (mySpareParts?.size!! > 0) {
-                        for (j in mySpareParts.indices) {
-                            val mySparePart = mySpareParts[j]
-                            gridSpareParts.addView(
-                                dynamicViews.textView(
-                                    mySparePart.name + " (UID: " + mySparePart.uid + ")",
-                                    "tagSparePartName&UID",
-                                    false,
-                                    50,
-                                    Color.GRAY,
-                                    15,
-                                    false,
-                                    false
-                                )
-                            )
-                            gridSpareParts.addView(
-                                dynamicViews.textView(
-                                    resources.getString(R.string.quantity_colon) + " " + mySparePart.quantity + "/" + mySparePart.current_quantity + " " + mySparePart.unit,
-                                    "tagSparePartQuantity",
-                                    false,
-                                    50,
-                                    ContextCompat.getColor(
-                                        activity,
-                                        R.color.Color_Text_Light
-                                    ),
-                                    14,
-                                    false,
-                                    false
-                                )
-                            )
-                            if (mySparePart.location != null) {
-                                gridSpareParts.addView(
-                                    dynamicViews.textView(
-                                        resources.getString(
-                                            R.string.location_colon
-                                        ) + " " + mySparePart.location,
-                                        "tagSparePartQuantity",
-                                        false,
-                                        50,
-                                        ContextCompat.getColor(
-                                            activity,
-                                            R.color.Color_Text_Light
-                                        ),
-                                        14,
-                                        false,
-                                        false
-                                    )
-                                )
-                            }
-                            gridSpareParts.addView(
-                                dynamicViews.textView(
-                                    "",
-                                    "tagSpace",
-                                    false,
-                                    50
-                                )
-                            )
-                        }
-                    }
-                } else {
-                    tvSpareParts.visibility = View.GONE
-                }
-            } else {
-                tvSpareParts.visibility = View.GONE
-                gridSpareParts.visibility = View.GONE
-            }
-
-            //Custom Fields
-            if (workorder?.customFields != null) {
-                if (workorder?.customFields?.size!! > 0) {
-                    for (j in 0 until workorder?.customFields?.size!!) {
-                        if (workorder?.customFields!![j].fieldType == TCustomField.FIELD_TYPE_TEXT || workorder?.customFields!![j].fieldType == TCustomField.FIELD_TYPE_NUMERIC) {
-                            val tvKey = TextView(activity)
-                            tvKey.text = workorder?.customFields!![j].name + ":"
-                            tvKey.minWidth = 200
-                            val face = ResourcesCompat.getFont(activity, R.font.inter_bold)
-                            tvKey.setTypeface(face, Typeface.BOLD)
-                            val lp = LinearLayout.LayoutParams(
-                                LinearLayout.LayoutParams.WRAP_CONTENT,
-                                LinearLayout.LayoutParams.WRAP_CONTENT
-                            )
-                            lp.setMargins(0, 0, 16, 0)
-                            tvKey.layoutParams = lp
-                            gridCustomFields.addView(tvKey)
-
-                            val tvValue = dynamicViews.textView(
-                                workorder?.customFields!![j].fieldValue,
-                                "tag",
-                                false,
-                                200
-                            )
-                            gridCustomFields.addView(tvValue)
-                        } else if (workorder?.customFields!![j].fieldType == TCustomField.FIELD_TYPE_SELECT) {
-                            val selectedOption = workorder?.customFields!![j].customFieldOptionId
-                            var nameOfSelectedOption = ""
-                            for (oneOption in workorder?.customFields!![j].customFieldOptions!!) {
-                                if (oneOption.customFieldOptionId.equals(
-                                        selectedOption,
-                                        ignoreCase = true
-                                    )
-                                ) {
-                                    nameOfSelectedOption = oneOption.name
-                                }
-                            }
-                            val tvKey = TextView(activity)
-                            tvKey.text = workorder?.customFields!![j].name + ":"
-                            tvKey.minWidth = 200
-                            val face = ResourcesCompat.getFont(activity, R.font.inter_bold)
-                            tvKey.setTypeface(face, Typeface.BOLD)
-                            val lp = LinearLayout.LayoutParams(
-                                LinearLayout.LayoutParams.WRAP_CONTENT,
-                                LinearLayout.LayoutParams.WRAP_CONTENT
-                            )
-                            lp.setMargins(0, 0, 16, 0)
-                            tvKey.layoutParams = lp
-                            gridCustomFields.addView(tvKey)
-
-                            val tvValue = dynamicViews.textView(
-                                nameOfSelectedOption,
-                                "tag",
-                                false,
-                                200
-                            )
-                            gridCustomFields.addView(tvValue)
-                        }
-                    }
-                }
-            } else {
-                gridCustomFields.visibility = View.GONE
-            }
-
-            showMore = false
             tvTags.visibility = View.GONE
             gridTag.visibility = View.GONE
             tvDocuments.visibility = View.GONE
             gridDocument.visibility = View.GONE
             textViewAddDocument.visibility = View.GONE
             gridDocumentPreview.visibility = View.GONE
-            tvSpareParts.visibility = View.GONE
-            gridSpareParts.visibility = View.GONE
-            gridCustomFields.visibility = View.GONE
-            bShow.setOnClickListener {
-                if (showMore) {
-                    showMore = false
-                    bShow.setCompoundDrawablesWithIntrinsicBounds(
-                        0,
-                        0,
-                        R.drawable.ic_arrow_down,
-                        0
-                    )
-                    bShow.text = resources.getString(R.string.show_more)
-                    tvTags.visibility = View.GONE
-                    gridTag.visibility = View.GONE
-                    tvDocuments.visibility = View.GONE
-                    gridDocument.visibility = View.GONE
-                    textViewAddDocument.visibility = View.GONE
-                    gridDocumentPreview.visibility = View.GONE
-                    tvSpareParts.visibility = View.GONE
-                    gridSpareParts.visibility = View.GONE
-                    gridCustomFields.visibility = View.GONE
-                } else {
-                    showMore = true
-                    bShow.setCompoundDrawablesWithIntrinsicBounds(
-                        0,
-                        0,
-                        R.drawable.ic_arrow_up,
-                        0
-                    )
-                    bShow.text = resources.getString(R.string.show_less)
-                    if (workorder?.tags != null) {
-                        if (workorder?.tags?.size!! > 0) {
-                            tvTags.visibility = View.VISIBLE
-                            gridTag.visibility = View.VISIBLE
-                        }
-                    }
-                    tvDocuments.visibility = View.VISIBLE
-                    gridDocument.visibility = View.VISIBLE
-                    textViewAddDocument.visibility = View.VISIBLE
-                    gridDocumentPreview.visibility = View.VISIBLE
-                    if (workorder?.spareParts != null) {
-                        if (workorder?.spareParts?.size!! > 0) {
-                            tvSpareParts.visibility = View.VISIBLE
-                            gridSpareParts.visibility = View.VISIBLE
-                        }
-                    }
-                    if (workorder?.customFields != null) {
-                        if (workorder?.customFields?.size!! > 0) {
-                            gridCustomFields.visibility = View.VISIBLE
-                        }
-                    }
-                }
-            }
-
-            bGuide?.setOnClickListener {
-                moveToGuideScreen()
-            }
-
-            ////////////////////////////////// PROTOCOL SECTION /////////////////////////////////////////////
-            /////////////////////////////////////////////////////////////////////////////////////////////////
-            if (workorder?.status.equals(Workorder.WORKORDER_STATUS_DONE, ignoreCase = true)) {
-                clProtocol.visibility = View.VISIBLE
-
-                if (workorder?.end_time != null) {
-                    if (workorder?.end_time?.isNotEmpty() == true) {
-                        val endTimeFormatted =
-                            MyDateTimeStamp.getDateTimeFormattedStringFromMilliseconds(
-                                java.lang.Long.valueOf(workorder?.end_time!!)
-                            )
-                        tvEndTimeValue.text = endTimeFormatted
-                    }
-                }
-
-                if (workorder?.hours_spent != null) {
-                    if (workorder?.hours_spent?.isNotEmpty() == true) {
-                        tvHoursSpentValue.text =
-                            workorder?.hours_spent + Constants.SPACE_STRING + resources.getString(
-                                R.string.hours
-                            )
-                    }
-                }
-
-                //Contributor
-                if (workorder?.contributors != null) {
-                    val myContributors = workorder?.contributors
-                    if (myContributors?.size!! > 0) {
-                        for (j in myContributors.indices) {
-                            val myContributor = myContributors[j]
-                            gridContributorsProtocol.addView(
-                                dynamicViews.textView(
-                                    myContributor.display_name + Constants.SPACE_STRING + getString(
-                                        R.string.dash
-                                    ) + Constants.SPACE_STRING + myContributor.hours_spent + Constants.SPACE_STRING + getString(
-                                        R.string.hours
-                                    ), "", false, 50, Color.GRAY, 14, false, false
-                                )
-                            )
-                        }
-                    }
-                } else {
-                    tvContributorsProtocol.visibility = View.GONE
-                }
-
-                //Costs
-                if (workorder?.costs != null) {
-                    val myCosts = workorder?.costs
-                    if (myCosts?.size!! > 0) {
-                        for (j in myCosts.indices) {
-                            val myCost = myCosts[j]
-                            gridCostsProtocol.addView(
-                                dynamicViews.textView(
-                                    myCost.title + Constants.SPACE_STRING + getString(
-                                        R.string.dash
-                                    ) + Constants.SPACE_STRING + "€" + myCost.value,
-                                    "",
-                                    false,
-                                    50,
-                                    Color.GRAY,
-                                    14,
-                                    false,
-                                    false
-                                )
-                            )
-                        }
-                    }
-                } else {
-                    tvCostsProtocol.visibility = View.GONE
-                }
-
-                //Spare Parts
-                if (workorder?.spareParts != null) {
-                    val mySpareParts = workorder?.spareParts
-                    if (mySpareParts?.size!! > 0) {
-                        for (j in mySpareParts.indices) {
-                            val mySparePart = mySpareParts[j]
-                            gridSparePartsProtocol.addView(
-                                dynamicViews.textView(
-                                    mySparePart.name + " (UID: " + mySparePart.uid + ")",
-                                    "tagSparePartName&UID",
-                                    false,
-                                    50,
-                                    ContextCompat.getColor(
-                                        activity,
-                                        R.color.Color_Text_Light
-                                    ),
-                                    15,
-                                    true,
-                                    false
-                                )
-                            )
-                            gridSparePartsProtocol.addView(
-                                dynamicViews.textView(
-                                    mySparePart.quantity + " " + mySparePart.unit,
-                                    "tagSparePartQuantity",
-                                    false,
-                                    50,
-                                    Color.GRAY,
-                                    14,
-                                    false,
-                                    false
-                                )
-                            )
-                        }
-                    }
-                } else {
-                    tvSparePartsProtocol.visibility = View.GONE
-                }
-
-                if (workorder?.a_type != null) {
-                    if (workorder?.a_type.equals(
-                            Workorder.WORKORDER_TYPE_UNPLANNED,
-                            ignoreCase = true
-                        )
-                    ) {
-                        if (workorder?.problem != null) {
-                            if (workorder?.problem?.isNotEmpty() == true) {
-                                tvProblem.text = workorder?.problem
-                            }
-                        }
-                        if (workorder?.solution != null) {
-                            if (workorder?.solution?.isNotEmpty() == true) {
-                                tvSolution.text = workorder?.solution
-                            }
-                        }
-                        tvProblemLabel.visibility = View.VISIBLE
-                        tvProblem.visibility = View.VISIBLE
-                        tvSolutionLabel.visibility = View.VISIBLE
-                        tvSolution.visibility = View.VISIBLE
-                        tvCommentLabel.visibility = View.GONE
-                        tvComment.visibility = View.GONE
-                    } else if (workorder?.a_type.equals(
-                            Workorder.WORKORDER_TYPE_PLANNED,
-                            ignoreCase = true
-                        )
-                    ) {
-                        if (workorder?.comment != null) {
-                            if (workorder?.comment?.isNotEmpty() == true) {
-                                tvComment.text = workorder?.comment
-                            }
-                        }
-                        tvCommentLabel.visibility = View.VISIBLE
-                        tvComment.visibility = View.VISIBLE
-                        tvProblemLabel.visibility = View.GONE
-                        tvProblem.visibility = View.GONE
-                        tvSolutionLabel.visibility = View.GONE
-                        tvSolution.visibility = View.GONE
-                    }
-                }
-                if (workorder?.documents != null) {
-                    if (workorder?.documents?.size!! > 0) {
-                        for (j in 0 until workorder?.documents?.size!!) {
-                            if (workorder?.documents!![j].signature) {
-                                ivSignature.visibility = View.VISIBLE
-                                ivSignature.glide("https:" + workorder?.documents!![j].url)
-                                ivSignature.setOnClickListener {
-                                    Toast.makeText(
-                                        activity,
-                                        R.string.enlargement_is_disabled,
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                            }
-                        }
-                    }
-                }
-            } else {
-                clProtocol.visibility = View.GONE
-            }
-
-            if (workorder?.markedAsDoneBy != null) {
-                // TODO: 12/10/2018 don't check in session manager as it only contains 1 user i.e myself. Hit users API.
-                if (!SessionManager(activity).getString(SessionManager.KEY_LOGIN_ID).equals(
-                        "",
-                        ignoreCase = true
-                    ) && SessionManager(activity).getString(SessionManager.KEY_LOGIN_ID).equals(
-                        workorder?.markedAsDoneBy,
-                        ignoreCase = true
-                    )
-                ) {
-                    tvDoneBy.text =
-                        SessionManager(activity).getString(SessionManager.KEY_LOGIN_NAME)
-                }
-            }
-            workorder?.id?.let { fetchGuideRecommendations(it) }
         }
+
     }
 
     private fun fetchGuideRecommendations(selectedWorkOrderId: String) {
@@ -611,39 +180,8 @@ class WorkOrderDetailsFragment : ConnectavoBaseFragment(), EasyPermissions.Permi
         val recommendationsList: ArrayList<WorkOrderRecommendation.Recommendation> = ArrayList()
         recommendationsList.addAll(workOrderRecommendation.recommendationWorkOrder)
         recommendationsList.addAll(workOrderRecommendation.recommendationDocuments)
-
-        if (recommendationsList.size > 0) {
-            guide_button_Progress_bar?.visibility = View.GONE
-            bGuide?.isEnabled = true
-            if (recommendationsList.size == 1) {
-                bGuide?.text =
-                    resources.getString(R.string.recommendation, recommendationsList.size)
-            } else {
-                bGuide?.text =
-                    resources.getString(R.string.recommendations, recommendationsList.size)
-            }
-            bGuide?.setBackgroundResource(R.drawable.selector_button_border_grey)
-            this.recommendationsList = recommendationsList
-        } else {
-            bGuide?.text = resources.getString(R.string.zeroRecommendation)
-            guide_button_Progress_bar?.visibility = View.GONE
-        }
     }
 
-    private fun moveToGuideScreen() {
-        recommendationsList?.let {
-            val intent = Intent(activity, WorkOrderGuideActivity::class.java)
-            intent.putExtra(
-                WorkOrderDetailActivity.SELECTED_WORK_ORDER,
-                workorder as Serializable
-            )
-            intent.putExtra(
-                WorkOrderDetailActivity.SELECTED_WORK_ORDER_RECOMMENDATIONS,
-                recommendationsList as Serializable
-            )
-            startActivity(intent)
-        }
-    }
 
     override fun onResume() {
         super.onResume()
@@ -851,7 +389,8 @@ class WorkOrderDetailsFragment : ConnectavoBaseFragment(), EasyPermissions.Permi
                                             if (response.body() != null && statusCode == 200) {
                                                 val jObj: JsonObject = response.body()!!
                                                 val id = jObj.get("id").asString
-                                                val contentType = jObj.get("content_type").asString
+                                                val contentType =
+                                                    jObj.get("content_type").asString
                                                 val filename = jObj.get("filename").asString
                                                 val url = jObj.get("url").asString
                                                 val signature = jObj.get("signature").asBoolean

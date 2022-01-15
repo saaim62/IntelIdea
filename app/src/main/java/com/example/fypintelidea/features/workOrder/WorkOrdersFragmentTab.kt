@@ -248,7 +248,6 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
         //  Adds the dialog with radio button
         val itemsKeys = arrayOf<CharSequence>(
             "due_date desc",
-            "asset_id desc",
             "assigned_to desc",
             "name desc"
         )
@@ -257,10 +256,6 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
             ConstantsWOType.getDialogFriendlyName(
                 activity as Context,
                 "due_date_dialog"
-            ),
-            ConstantsWOType.getDialogFriendlyName(
-                activity as Context,
-                "assets"
             ),
             ConstantsWOType.getDialogFriendlyName(
                 activity as Context,
@@ -326,7 +321,7 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
                 } else {
                     workOrders.clear()
                     tvWorkorderCount?.text =
-                        "0 " + activity?.resources?.getString(R.string.work_orders)
+                        "0 " + activity?.resources?.getString(R.string.ideas)
                 }
 
                 this.selectedDueDateGreaterThanEqualToToday =
@@ -336,7 +331,7 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
                 } else {
                     workOrders.clear()
                     tvWorkorderCount?.text =
-                        "0 " + activity?.resources?.getString(R.string.work_orders)
+                        "0 " + activity?.resources?.getString(R.string.ideas)
                 }
 
                 this.selectedDueDateLessThanEqualToToday =
@@ -352,7 +347,7 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
                 } else {
                     workOrders.clear()
                     tvWorkorderCount?.text =
-                        "0 " + activity?.resources?.getString(R.string.work_orders)
+                        "0 " + activity?.resources?.getString(R.string.ideas)
                 }
 
                 this.selectedTypeList.clear()
@@ -366,7 +361,7 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
                 } else {
                     workOrders.clear()
                     tvWorkorderCount?.text =
-                        "0 " + activity?.resources?.getString(R.string.work_orders)
+                        "0 " + activity?.resources?.getString(R.string.ideas)
                 }
 
                 this.selectedStatusList.clear()
@@ -380,7 +375,7 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
                 } else {
                     workOrders.clear()
                     tvWorkorderCount?.text =
-                        "0 " + activity?.resources?.getString(R.string.work_orders)
+                        "0 " + activity?.resources?.getString(R.string.ideas)
                 }
 
                 this.selectedPriorityList.clear()
@@ -394,7 +389,7 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
                 } else {
                     workOrders.clear()
                     tvWorkorderCount?.text =
-                        "0 " + activity?.resources?.getString(R.string.work_orders)
+                        "0 " + activity?.resources?.getString(R.string.ideas)
                 }
 
                 this.selectedUsersList.clear()
@@ -408,7 +403,7 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
                 } else {
                     workOrders.clear()
                     tvWorkorderCount?.text =
-                        "0 " + activity?.resources?.getString(R.string.work_orders)
+                        "0 " + activity?.resources?.getString(R.string.ideas)
                 }
 
 //                this.selectedTeamsList.clear()
@@ -422,7 +417,7 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
 //                } else {
 //                    workOrders.clear()
 //                    tvWorkorderCount?.text =
-//                        "0 " + activity?.resources?.getString(R.string.work_orders)
+//                        "0 " + activity?.resources?.getString(R.string.ideas)
 //                }
 
 //                this.selectedAssetsList.clear()
@@ -436,7 +431,7 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
 //                } else {
 //                    workOrders.clear()
 //                    tvWorkorderCount?.text =
-//                        "0 " + activity?.resources?.getString(R.string.work_orders)
+//                        "0 " + activity?.resources?.getString(R.string.ideas)
 //                }
 
                 this.selectedIncludeChildrenAssets =
@@ -446,7 +441,7 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
                 } else {
                     workOrders.clear()
                     tvWorkorderCount?.text =
-                        "0 " + activity?.resources?.getString(R.string.work_orders)
+                        "0 " + activity?.resources?.getString(R.string.ideas)
                 }
 
                 this.selectedIncludeChklistAssets =
@@ -456,7 +451,7 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
                 } else {
                     workOrders.clear()
                     tvWorkorderCount?.text =
-                        "0 " + activity?.resources?.getString(R.string.work_orders)
+                        "0 " + activity?.resources?.getString(R.string.ideas)
                 }
 
                 this.selectedCategoryList.clear()
@@ -470,7 +465,7 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
                 } else {
                     workOrders.clear()
                     tvWorkorderCount?.text =
-                        "0 " + activity?.resources?.getString(R.string.work_orders)
+                        "0 " + activity?.resources?.getString(R.string.ideas)
                 }
 
                 this.selectedTagsList.clear()
@@ -483,7 +478,7 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
                 } else {
                     workOrders.clear()
                     tvWorkorderCount?.text =
-                        "0 " + activity?.resources?.getString(R.string.work_orders)
+                        "0 " + activity?.resources?.getString(R.string.ideas)
                 }
 
                 this.selectedDueDateGreaterThanEqualToDatePicker =
@@ -493,7 +488,7 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
                 } else {
                     workOrders.clear()
                     tvWorkorderCount?.text =
-                        "0 " + activity?.resources?.getString(R.string.work_orders)
+                        "0 " + activity?.resources?.getString(R.string.ideas)
                 }
                 this.selectedDueDateLessThanEqualToDatePicker =
                     data.getStringExtra(DateRangePickerActivity.KEY_SELECTED_DUEDATE_LESS_THAN_EQUAL_TO_DATE_PICKER)
@@ -623,7 +618,7 @@ class WorkOrdersFragmentTab : ConnectavoBaseFragment() {
                     progressBarWorkOrder?.visibility = View.GONE
                     tvWorkorderCount?.text =
                         workOrdersFragmentTabViewModel.totalWorkOrders + (" " + activity?.resources?.getString(
-                            R.string.work_orders
+                            R.string.ideas
                         ))
                     adapter?.updateList(apiResponse)
                 }

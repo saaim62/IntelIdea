@@ -26,7 +26,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/inter_light"
-        android:text="@string/keep_track_of_workorders_and_performance"
+        android:text="Ideas for Investors"
         android:textAlignment="center"
         android:textColor="#3FD389"
         android:textSize="24sp"

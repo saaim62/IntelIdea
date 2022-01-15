@@ -22,7 +22,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/inter_medium"
-            android:text="@string/workorder_id"
+            android:text="Idea ID"
             android:textColor="@color/hint_text_color"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
             android:id="@+id/tvWorkorderIdValue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="50dp"
             android:layout_marginEnd="8dp"
             android:fontFamily="@font/inter_regular"
             android:textColor="@color/md_dark_green"
@@ -40,31 +40,6 @@
             app:layout_constraintStart_toEndOf="@+id/tvWorkorderId"
             app:layout_constraintTop_toTopOf="@+id/tvWorkorderId"
             tools:text="2359" />
-
-        <TextView
-            android:id="@+id/tvSpartacus"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/inter_medium"
-            android:text="@string/spartacus_text"
-            android:textColor="@color/hint_text_color"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/tvWorkorderId"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvWorkorderId" />
-
-        <TextView
-            android:id="@+id/tvSpartacusValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_regular"
-            android:text="@string/dash"
-            android:textColor="@color/md_dark_green"
-            app:layout_constraintBottom_toBottomOf="@+id/tvSpartacus"
-            app:layout_constraintStart_toStartOf="@+id/tvWorkorderIdValue"
-            app:layout_constraintTop_toTopOf="@+id/tvSpartacus" />
 
         <TextView
             android:id="@+id/tvAssignee"
@@ -77,7 +52,7 @@
             android:textColor="@color/hint_text_color"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSpartacus" />
+            app:layout_constraintTop_toBottomOf="@+id/tvWorkorderId" />
 
         <TextView
             android:id="@+id/tvAssigneeValue"
@@ -116,54 +91,29 @@
             app:layout_constraintTop_toTopOf="@+id/tvTeam" />
 
         <TextView
-            android:id="@+id/tvDueDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/inter_medium"
-            android:text="@string/due_date"
-            android:textColor="@color/hint_text_color"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gridTeam" />
-
-        <TextView
-            android:id="@+id/tvDueDateValue"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:fontFamily="@font/inter_regular"
-            android:textColor="@color/md_dark_green"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/gridTeam"
-            app:layout_constraintTop_toTopOf="@+id/tvDueDate"
-            tools:text="01.04.2018 05:00" />
-
-        <TextView
             android:id="@+id/tvCreatedAt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/inter_medium"
             android:text="@string/created_at"
             android:textColor="@color/hint_text_color"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDueDateValue" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTeam" />
 
         <TextView
             android:id="@+id/tvCreatedAtValue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:fontFamily="@font/inter_regular"
             android:textColor="@color/md_dark_green"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCreatedAt"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvDueDateValue"
-            app:layout_constraintTop_toBottomOf="@+id/tvDueDate"
+            app:layout_constraintStart_toStartOf="@+id/gridTeam"
+            app:layout_constraintTop_toTopOf="@+id/tvCreatedAt"
             tools:text="14.03.2018 17:48" />
 
         <TextView
@@ -171,13 +121,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/inter_medium"
             android:text="@string/estimated"
             android:textColor="@color/hint_text_color"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvCreatedAtValue" />
+            app:layout_constraintTop_toBottomOf="@+id/tvCreatedAt" />
 
         <TextView
             android:id="@+id/tvEstimatedValue"
@@ -194,7 +144,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/inter_medium"
             android:text="@string/description_colon"
             android:textColor="@color/hint_text_color"
@@ -211,7 +161,7 @@
             android:singleLine="false"
             android:textColor="@color/md_dark_green"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvDueDateValue"
+            app:layout_constraintStart_toStartOf="@+id/tvCreatedAtValue"
             app:layout_constraintTop_toTopOf="@+id/tvDescription" />
 
         <TextView
@@ -219,7 +169,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/inter_medium"
             android:text="@string/tags"
             android:textColor="@color/hint_text_color"
@@ -244,7 +194,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/inter_medium"
             android:text="@string/documents_colon"
             android:textColor="@color/hint_text_color"
@@ -309,368 +259,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/gridDocumentPreview" />
-
-        <TextView
-            android:id="@+id/tvSpareParts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/inter_medium"
-            android:text="@string/SpareParts"
-            android:textColor="@color/hint_text_color"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gridDocument" />
-
-        <GridLayout
-            android:id="@+id/gridSpareParts"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:columnCount="1"
-            android:minHeight="16dp"
-            android:textColor="@color/md_dark_green"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/gridDocumentPreview"
-            app:layout_constraintTop_toTopOf="@+id/tvSpareParts" />
-
-        <GridLayout
-            android:id="@+id/gridCustomFields"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:columnCount="2"
-            android:minHeight="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvWorkorderId"
-            app:layout_constraintTop_toBottomOf="@+id/gridSpareParts" />
-
-        <Button
-            android:id="@+id/bShow"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="8dp"
-            android:drawableEnd="@drawable/ic_arrow_down"
-            android:fontFamily="@font/inter_semi_bold"
-            android:text="@string/show_more"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gridCustomFields" />
-
-        <Button
-            android:id="@+id/bGuide"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/selector_button_border_grey"
-            android:enabled="false"
-            android:fontFamily="@font/inter_semi_bold"
-            android:textAllCaps="true"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bShow"
-            tools:text="@string/guide" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clProtocol"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bGuide">
-
-            <LinearLayout
-                android:id="@+id/llDivider2"
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:background="@color/Color.Default"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tvProtocolHeading"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/protocol"
-                android:textColor="@color/md_green_500"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/llDivider2" />
-
-            <TextView
-                android:id="@+id/tvEntTimeTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/inter_medium"
-                android:text="@string/end_time"
-                android:textColor="@color/hint_text_color"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvEndTimeValue"
-                app:srcCompat="@drawable/ic_calendar_small" />
-
-            <TextView
-                android:id="@+id/tvEndTimeValue"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="@string/dash"
-                android:textColor="@color/md_dark_green"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintStart_toStartOf="@+id/tvHoursSpentValue"
-                app:layout_constraintTop_toBottomOf="@+id/tvProtocolHeading" />
-
-            <TextView
-                android:id="@+id/tvHoursSpent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/inter_medium"
-                android:text="@string/hours_spent_colon"
-                android:textColor="@color/hint_text_color"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvHoursSpentValue"
-                fresco:srcCompat="@drawable/ic_calendar_small" />
-
-            <TextView
-                android:id="@+id/tvHoursSpentValue"
-                android:layout_width="295dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="@string/dash"
-                android:textColor="@color/md_dark_green"
-                app:layout_constraintStart_toEndOf="@+id/tvHoursSpent"
-                app:layout_constraintTop_toBottomOf="@+id/tvEndTimeValue" />
-
-            <TextView
-                android:id="@+id/tvContributorsProtocol"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/inter_medium"
-                android:text="@string/contributor"
-                android:textColor="@color/hint_text_color"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvHoursSpentValue" />
-
-            <GridLayout
-                android:id="@+id/gridContributorsProtocol"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:columnCount="1"
-                android:minHeight="16dp"
-                android:textColor="@color/md_dark_green"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tvEndTimeValue"
-                app:layout_constraintTop_toTopOf="@+id/tvContributorsProtocol" />
-
-            <TextView
-                android:id="@+id/tvCostsProtocol"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/inter_medium"
-                android:text="@string/other_costs"
-                android:textColor="@color/hint_text_color"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/gridContributorsProtocol" />
-
-            <GridLayout
-                android:id="@+id/gridCostsProtocol"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:columnCount="1"
-                android:minHeight="16dp"
-                android:textColor="@color/md_dark_green"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tvEndTimeValue"
-                app:layout_constraintTop_toTopOf="@+id/tvCostsProtocol" />
-
-            <TextView
-                android:id="@+id/tvSparePartsProtocol"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/inter_medium"
-                android:text="@string/SpareParts"
-                android:textColor="@color/hint_text_color"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/gridCostsProtocol" />
-
-            <GridLayout
-                android:id="@+id/gridSparePartsProtocol"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:columnCount="1"
-                android:minHeight="16dp"
-                android:textColor="@color/md_dark_green"
-                app:layout_constraintStart_toStartOf="@+id/tvEndTimeValue"
-                app:layout_constraintTop_toTopOf="@+id/tvSparePartsProtocol" />
-
-            <TextView
-                android:id="@+id/tvProblemLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/inter_medium"
-                android:text="@string/problem_colon"
-                android:textColor="@color/hint_text_color"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvProblem"
-                app:srcCompat="@drawable/ic_text_small" />
-
-            <TextView
-                android:id="@+id/tvProblem"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/inter_regular"
-                android:maxLines="3"
-                android:singleLine="false"
-                android:text="@string/dash"
-                android:textColor="@color/md_dark_green"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/gridSparePartsProtocol"
-                app:layout_constraintTop_toBottomOf="@+id/gridSparePartsProtocol" />
-
-            <TextView
-                android:id="@+id/tvSolutionLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/inter_medium"
-                android:text="@string/solution_colon"
-                android:textColor="@color/hint_text_color"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvSolution"
-                app:srcCompat="@drawable/ic_text_small" />
-
-            <TextView
-                android:id="@+id/tvSolution"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/inter_regular"
-                android:maxLines="3"
-                android:singleLine="false"
-                android:text="@string/dash"
-                android:textColor="@color/md_dark_green"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tvProblem"
-                app:layout_constraintTop_toBottomOf="@+id/tvProblem" />
-
-            <TextView
-                android:id="@+id/tvCommentLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/inter_medium"
-                android:text="@string/comment_colon"
-                android:textColor="@color/hint_text_color"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvComment"
-                app:srcCompat="@drawable/ic_text_small" />
-
-            <TextView
-                android:id="@+id/tvComment"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/inter_regular"
-                android:maxLines="3"
-                android:singleLine="false"
-                android:text="@string/dash"
-                android:textColor="@color/md_dark_green"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tvEndTimeValue"
-                app:layout_constraintTop_toBottomOf="@+id/tvSolution" />
-
-            <TextView
-                android:id="@+id/tvSignatureLabel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/inter_medium"
-                android:text="@string/signature"
-                android:textColor="@color/hint_text_color"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvComment" />
-
-            <ImageView
-                android:id="@+id/ivSignature"
-                android:layout_width="250dp"
-                android:layout_height="430dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tvEndTimeValue"
-                app:layout_constraintTop_toBottomOf="@+id/tvSignatureLabel" />
-
-            <TextView
-                android:id="@+id/tvDoneBy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:textColor="@color/md_dark_green"
-                android:textSize="15sp"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/ivSignature"
-                app:layout_constraintTop_toBottomOf="@+id/ivSignature" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <ProgressBar
-            android:id="@+id/guide_button_Progress_bar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            app:layout_constraintBottom_toBottomOf="@+id/bGuide"
-            app:layout_constraintEnd_toEndOf="@+id/bGuide"
-            app:layout_constraintStart_toStartOf="@+id/bGuide"
-            app:layout_constraintTop_toTopOf="@+id/bGuide" />
 
         <ProgressBar
             android:id="@+id/progressBarWorkOrderDetailFragment"

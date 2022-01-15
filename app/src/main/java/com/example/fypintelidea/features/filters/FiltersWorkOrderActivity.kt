@@ -97,66 +97,6 @@ class FiltersWorkOrderActivity : AppCompatActivity() {
                 selectedDueDateLessThanEqualToOverDue = selectedDueDateLessThanEqualToOverDueTemp
             }
 
-            //set initial state of type buttons
-            val selectedTypeListTemp = bundle.getStringArrayList(KEY_SELECTED_TYPE_LIST)
-            if (selectedTypeListTemp != null && selectedTypeListTemp.size > 0) {
-                selectedTypeList = selectedTypeListTemp
-                if (selectedTypeList.contains(Workorder.WORKORDER_TYPE_UNPLANNED)) {
-                    bUnplanned?.isSelected = true
-                    bUnplanned?.background = ContextCompat.getDrawable(
-                        this,
-                        R.drawable.selector_unplanned_button_selected
-                    )
-                    bUnplanned?.setTextColor(Color.WHITE)
-                }
-                if (selectedTypeList.contains(Workorder.WORKORDER_TYPE_PLANNED)) {
-                    bPlanned?.isSelected = true
-                    bPlanned?.background = ContextCompat.getDrawable(
-                        this,
-                        R.drawable.selector_planned_button_selected
-                    )
-                    bPlanned?.setTextColor(Color.WHITE)
-                }
-                if (selectedTypeList.contains(Workorder.WORKORDER_TYPE_PREDICTIVE)) {
-                    bPredictive?.isSelected = true
-                    bPredictive?.background = ContextCompat.getDrawable(
-                        this,
-                        R.drawable.selector_predictive_button_selected
-                    )
-                    bPredictive?.setTextColor(Color.WHITE)
-                }
-            }
-
-            //set initial state of priority buttons
-            val selectedPriorityListTemp = bundle.getStringArrayList(KEY_SELECTED_PRIORITY_LIST)
-            if (selectedPriorityListTemp != null && selectedPriorityListTemp.size > 0) {
-                selectedPriorityList = selectedPriorityListTemp
-                if (selectedPriorityList.contains(Workorder.WORKORDER_PRIORITY_LOW)) {
-                    bLow?.isSelected = true
-                    bLow?.background = ContextCompat.getDrawable(
-                        this,
-                        R.drawable.selector_prioritylow_button_selected
-                    )
-                    bLow?.setTextColor(Color.WHITE)
-                }
-                if (selectedPriorityList.contains(Workorder.WORKORDER_PRIORITY_MEDIUM)) {
-                    bMedium?.isSelected = true
-                    bMedium?.background = ContextCompat.getDrawable(
-                        this,
-                        R.drawable.selector_prioritymedium_button_selected
-                    )
-                    bMedium?.setTextColor(Color.WHITE)
-                }
-                if (selectedPriorityList.contains(Workorder.WORKORDER_PRIORITY_HIGH)) {
-                    bHigh?.isSelected = true
-                    bHigh?.background = ContextCompat.getDrawable(
-                        this,
-                        R.drawable.selector_priorityhigh_button_selected
-                    )
-                    bHigh?.setTextColor(Color.WHITE)
-                }
-            }
-
             //set initial state of employees
             val selectedUsersListTemp = bundle.getStringArrayList(UsersActivity.KEY_SELECTED_USERS)
             if (selectedUsersListTemp != null && selectedUsersListTemp.size > 0) {
@@ -168,52 +108,7 @@ class FiltersWorkOrderActivity : AppCompatActivity() {
                 tvEmploySelected?.setHint(R.string.select_one_or_more)
             }
 
-            //set initial state of teams
-//            val selectedTeamsListTemp = bundle.getStringArrayList(TeamsActivity.KEY_SELECTED_TEAMS)
-//            if (selectedTeamsListTemp != null && selectedTeamsListTemp.size > 0) {
-//                selectedTeamsList = selectedTeamsListTemp
-//                tvTeamSelected?.text = String.format("%d", selectedTeamsList?.size) + " selected"
-//            } else {
-//                tvTeamSelected?.text = null
-//                tvTeamSelected?.setHint(R.string.select_one_or_more)
-//            }
 
-            //set initial state of assets
-//            val selectedAssetsListTemp =
-//                bundle.getStringArrayList(AssetsMultiSelectActivity.KEY_SELECTED_ASSETS)
-//            if (selectedAssetsListTemp != null && selectedAssetsListTemp.size > 0) {
-//                selectedAssetsList = selectedAssetsListTemp
-//                tvAssetSelected?.text = String.format("%d", selectedAssetsList?.size) + " selected"
-//            } else {
-//                tvAssetSelected?.text = null
-//                tvAssetSelected?.setHint(R.string.select_one_or_more)
-//            }
-
-            //set initial state include children assets
-            val selectedIncludeChildrenAssetsTemp =
-                bundle.getString(KEY_SELECTED_INCLUDE_CHILDREN_ASSETS)
-            if (selectedIncludeChildrenAssetsTemp != null && !selectedIncludeChildrenAssetsTemp.equals(
-                    "",
-                    ignoreCase = true
-                )
-            ) {
-                this.selectedIncludeChildrenAssets = selectedIncludeChildrenAssetsTemp
-                //set switch checked
-                swIncludeChildrenAssets?.isChecked = true
-            }
-
-            //set initial state include chklist assets
-            val selectedIncludeChklistAssetsTemp =
-                bundle.getString(KEY_SELECTED_INCLUDE_CHKLIST_ASSETS)
-            if (selectedIncludeChklistAssetsTemp != null && !selectedIncludeChklistAssetsTemp.equals(
-                    "",
-                    ignoreCase = true
-                )
-            ) {
-                this.selectedIncludeChklistAssets = selectedIncludeChklistAssetsTemp
-                //set switch checked
-                swIncludeChklistAssets?.isChecked = true
-            }
 
             //set initial state of statuses
             val selectedStatusesListTemp =
@@ -327,125 +222,7 @@ class FiltersWorkOrderActivity : AppCompatActivity() {
                 selectedDueDateLessThanEqualToOverDue = null
             }
         }
-        bUnplanned?.setOnClickListener {
-            bUnplanned?.isSelected = !bUnplanned?.isSelected!!
-            if (bUnplanned?.isSelected == true) {
-                bUnplanned?.background = ContextCompat.getDrawable(
-                    this,
-                    R.drawable.selector_unplanned_button_selected
-                )
-                bUnplanned?.setTextColor(Color.WHITE)
-                selectedTypeList.add(Workorder.WORKORDER_TYPE_UNPLANNED)
-            } else {
-                bUnplanned?.background =
-                    ContextCompat.getDrawable(this, R.drawable.selector_unplanned_button_normal)
-                bUnplanned?.setTextColor(ContextCompat.getColor(this, R.color.md_dark_green))
-                selectedTypeList.remove(Workorder.WORKORDER_TYPE_UNPLANNED)
-            }
-        }
-        bPlanned?.setOnClickListener {
-            bPlanned?.isSelected = !bPlanned?.isSelected!!
-            if (bPlanned?.isSelected == true) {
-                bPlanned?.background =
-                    ContextCompat.getDrawable(this, R.drawable.selector_planned_button_selected)
-                bPlanned?.setTextColor(Color.WHITE)
-                selectedTypeList.add(Workorder.WORKORDER_TYPE_PLANNED)
-            } else {
-                bPlanned?.background =
-                    ContextCompat.getDrawable(this, R.drawable.selector_planned_button_normal)
-                bPlanned?.setTextColor(ContextCompat.getColor(this, R.color.md_dark_green))
-                selectedTypeList.remove(Workorder.WORKORDER_TYPE_PLANNED)
-            }
-        }
-        bPredictive?.setOnClickListener {
-            bPredictive?.isSelected = !bPredictive?.isSelected!!
-            if (bPredictive?.isSelected == true) {
-                bPredictive?.background = ContextCompat.getDrawable(
-                    this,
-                    R.drawable.selector_predictive_button_selected
-                )
-                bPredictive?.setTextColor(Color.WHITE)
-                selectedTypeList.add(Workorder.WORKORDER_TYPE_PREDICTIVE)
-            } else {
-                bPredictive?.background = ContextCompat.getDrawable(
-                    this,
-                    R.drawable.selector_predictive_button_normal
-                )
-                bPredictive?.setTextColor(ContextCompat.getColor(this, R.color.md_dark_green))
-                selectedTypeList.remove(Workorder.WORKORDER_TYPE_PREDICTIVE)
-            }
-        }
 
-
-        swIncludeChildrenAssets?.setOnCheckedChangeListener { _, b ->
-            selectedIncludeChildrenAssets = if (b) {
-                "yes"
-            } else {
-                ""
-            }
-        }
-
-        swIncludeChklistAssets?.setOnCheckedChangeListener { _, b ->
-            selectedIncludeChklistAssets = if (b) {
-                "yes"
-            } else {
-                ""
-            }
-        }
-        bLow?.setOnClickListener {
-            bLow?.isSelected = !bLow?.isSelected!!
-            if (bLow?.isSelected == true) {
-                bLow?.background = ContextCompat.getDrawable(
-                    this,
-                    R.drawable.selector_prioritylow_button_selected
-                )
-                bLow?.setTextColor(Color.WHITE)
-                selectedPriorityList.add(Workorder.WORKORDER_PRIORITY_LOW)
-            } else {
-                bLow?.background = ContextCompat.getDrawable(
-                    this,
-                    R.drawable.selector_prioritylow_button_normal
-                )
-                bLow?.setTextColor(ContextCompat.getColor(this, R.color.md_dark_green))
-                selectedPriorityList.remove(Workorder.WORKORDER_PRIORITY_LOW)
-            }
-        }
-        bMedium?.setOnClickListener {
-            bMedium?.isSelected = !bMedium?.isSelected!!
-            if (bMedium?.isSelected == true) {
-                bMedium?.background = ContextCompat.getDrawable(
-                    this,
-                    R.drawable.selector_prioritymedium_button_selected
-                )
-                bMedium?.setTextColor(Color.WHITE)
-                selectedPriorityList.add(Workorder.WORKORDER_PRIORITY_MEDIUM)
-            } else {
-                bMedium?.background = ContextCompat.getDrawable(
-                    this,
-                    R.drawable.selector_prioritymedium_button_normal
-                )
-                bMedium?.setTextColor(ContextCompat.getColor(this, R.color.md_dark_green))
-                selectedPriorityList.remove(Workorder.WORKORDER_PRIORITY_MEDIUM)
-            }
-        }
-        bHigh?.setOnClickListener {
-            bHigh?.isSelected = !bHigh?.isSelected!!
-            if (bHigh?.isSelected == true) {
-                bHigh?.background = ContextCompat.getDrawable(
-                    this,
-                    R.drawable.selector_priorityhigh_button_selected
-                )
-                bHigh?.setTextColor(Color.WHITE)
-                selectedPriorityList.add(Workorder.WORKORDER_PRIORITY_HIGH)
-            } else {
-                bHigh?.background = ContextCompat.getDrawable(
-                    this,
-                    R.drawable.selector_priorityhigh_button_normal
-                )
-                bHigh?.setTextColor(ContextCompat.getColor(this, R.color.md_dark_green))
-                selectedPriorityList.remove(Workorder.WORKORDER_PRIORITY_HIGH)
-            }
-        }
         clEmployee.setOnClickListener {
             val intentUsers = Intent(mContext, UsersActivity::class.java)
             intentUsers.putStringArrayListExtra(
@@ -455,23 +232,6 @@ class FiltersWorkOrderActivity : AppCompatActivity() {
             startActivityForResult(intentUsers, USERS_REQUEST_CODE)
 
         }
-//        clTeam.setOnClickListener {
-//            val intentTeams = Intent(mContext, TeamsActivity::class.java)
-//            intentTeams.putStringArrayListExtra(
-//                TeamsActivity.KEY_SELECTED_TEAMS,
-//                selectedTeamsList as ArrayList<String>?
-//            )
-//            startActivityForResult(intentTeams, TEAMS_REQUEST_CODE)
-//
-//        }
-//        clAsset.setOnClickListener {
-//            val intent = Intent(mContext, AssetsMultiSelectActivity::class.java)
-//            intent.putExtra(
-//                AssetsMultiSelectActivity.KEY_SELECTED_ASSETS,
-//                selectedAssetsList as Serializable?
-//            )
-//            startActivityForResult(intent, ASSET_REQUEST_CODE)
-//        }
 
         clStatus.setOnClickListener {
             val intentStatuses = Intent(mContext, StatusesActivity::class.java)
@@ -608,23 +368,6 @@ class FiltersWorkOrderActivity : AppCompatActivity() {
                 bOverDue?.setTextColor(ContextCompat.getColor(this, R.color.md_dark_green))
                 selectedDueDateLessThanEqualToOverDue = null
 
-                bUnplanned?.background =
-                    ContextCompat.getDrawable(this, R.drawable.selector_unplanned_button_normal)
-                bUnplanned?.setTextColor(ContextCompat.getColor(this, R.color.md_dark_green))
-                selectedTypeList.remove(Workorder.WORKORDER_TYPE_UNPLANNED)
-
-                bPlanned?.background =
-                    ContextCompat.getDrawable(this, R.drawable.selector_planned_button_normal)
-                bPlanned?.setTextColor(ContextCompat.getColor(this, R.color.md_dark_green))
-                selectedTypeList.remove(Workorder.WORKORDER_TYPE_PLANNED)
-
-                bPredictive?.background = ContextCompat.getDrawable(
-                    this,
-                    R.drawable.selector_predictive_button_normal
-                )
-                bPredictive?.setTextColor(ContextCompat.getColor(this, R.color.md_dark_green))
-                selectedTypeList.remove(Workorder.WORKORDER_TYPE_PREDICTIVE)
-
                 selectedUsersList?.clear()
                 tvEmploySelected?.text = null
                 tvEmploySelected?.setHint(R.string.select_one_or_more)
@@ -632,37 +375,6 @@ class FiltersWorkOrderActivity : AppCompatActivity() {
                 selectedTeamsList?.clear()
                 tvTeamSelected?.text = null
                 tvTeamSelected?.setHint(R.string.select_one_or_more)
-
-                selectedAssetsList?.clear()
-                tvAssetSelected?.text = null
-                tvAssetSelected?.setHint(R.string.select_one_or_more)
-
-                swIncludeChildrenAssets?.isChecked = false
-                selectedIncludeChildrenAssets = null
-
-                swIncludeChklistAssets?.isChecked = false
-                selectedIncludeChklistAssets = null
-
-                bLow?.background = ContextCompat.getDrawable(
-                    this,
-                    R.drawable.selector_prioritylow_button_normal
-                )
-                bLow?.setTextColor(ContextCompat.getColor(this, R.color.md_dark_green))
-                selectedPriorityList.remove(Workorder.WORKORDER_PRIORITY_LOW)
-
-                bMedium?.background = ContextCompat.getDrawable(
-                    this,
-                    R.drawable.selector_prioritymedium_button_normal
-                )
-                bMedium?.setTextColor(ContextCompat.getColor(this, R.color.md_dark_green))
-                selectedPriorityList.remove(Workorder.WORKORDER_PRIORITY_MEDIUM)
-
-                bHigh?.background = ContextCompat.getDrawable(
-                    this,
-                    R.drawable.selector_priorityhigh_button_normal
-                )
-                bHigh?.setTextColor(ContextCompat.getColor(this, R.color.md_dark_green))
-                selectedPriorityList.remove(Workorder.WORKORDER_PRIORITY_HIGH)
 
                 selectedStatusesList?.clear()
                 tvStatusSelected?.text = resources.getString(R.string._3_selected)

@@ -10,6 +10,6 @@
     <item
         android:id="@+id/navigation_assets"
         android:icon="@drawable/selector_nav_assets"
-        android:title="@string/assets" />
+        android:title="@string/request" />
 
 </menu>

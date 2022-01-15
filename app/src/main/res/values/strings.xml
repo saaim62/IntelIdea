@@ -2,6 +2,8 @@
     <string name="app_name">Connectavo</string>
     <string name="workorders">Work orders</string>
     <string name="work_orders">Work orders</string>
+    <string name="ideas">Ideas</string>
+    <string name="select_idea_creator">Select Idea creator</string>
     <string name="filters">Filters</string>
     <string name="request">Request</string>
     <string name="requests">Requests</string>
@@ -30,6 +32,7 @@
     </string-array>
 
 
+    <string name="new_idea">New Idea</string>
     <string name="new_work_order">New work order</string>
     <string name="workorder_name">Workorder name*</string>
     <string name="enter_workorder_name">Enter work order name…</string>

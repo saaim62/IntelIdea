@@ -202,34 +202,6 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvType" />
 
-                    <ImageView
-                        android:id="@+id/ivAsset"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/tvAssetName"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/tvAssetName"
-                        app:srcCompat="@drawable/ic_asset_small"
-                        app:tint="@color/Color.Default" />
-
-                    <TextView
-                        android:id="@+id/tvAssetName"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/inter_regular"
-                        android:textColor="@color/md_dark_green"
-                        android:textSize="14sp"
-                        app:layout_constraintBottom_toTopOf="@+id/tabLayout"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/ivAsset"
-                        app:layout_constraintTop_toBottomOf="@+id/tvName"
-                        tools:text="ASSET NAME / LEAD LEVEL ASSET" />
-
                     <com.google.android.material.tabs.TabLayout
                         android:id="@+id/tabLayout"
                         android:layout_width="match_parent"
@@ -242,7 +214,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvAssetName"
+                        app:layout_constraintTop_toBottomOf="@+id/tvName"
                         app:tabGravity="fill"
                         app:tabIndicatorColor="@color/Color.Info"
                         app:tabMode="fixed"
@@ -265,14 +237,14 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <com.connectavo.app.connectavo_android.core.views.CustomViewPager
+        <com.example.fypintelidea.core.views.CustomViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/md_blue_grey_50"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        </com.connectavo.app.connectavo_android.core.views.CustomViewPager>
+        </com.example.fypintelidea.core.views.CustomViewPager>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

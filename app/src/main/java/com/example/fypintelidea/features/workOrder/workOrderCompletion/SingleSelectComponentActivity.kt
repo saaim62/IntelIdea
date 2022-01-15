@@ -47,7 +47,7 @@ class SingleSelectComponentActivity : ConnectavoBaseActivity() {
                     progressBarSpareParts?.visibility = View.VISIBLE
                 }
                 ENTITY_EMPLOYEE -> {
-                    tvTitleBar.text = resources.getString(R.string.select_employee)
+                    tvTitleBar.text = resources.getString(R.string.select_idea_creator)
                     singleSelectComponentActivityViewModel.fetchAllUsers()
                     progressBarSpareParts?.visibility = View.VISIBLE
                 }

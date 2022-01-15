@@ -52,7 +52,6 @@ class NewWorkorderActivity : ConnectavoBaseActivity(), EasyPermissions.Permissio
     private val newWorkOrderActivityViewModel: NewWorkOrderActivityViewModel by inject()
     internal var totalAssets: List<Asset>? = null
     private var photoPaths = ArrayList<String>()
-    private var selectedPriority = Workorder.WORKORDER_PRIORITY_MEDIUM
     private var selectedAssetId: String? = null
     private var selectedUserId: String? = null
     private var selectedChklistTemplateId: String? = null
@@ -61,17 +60,15 @@ class NewWorkorderActivity : ConnectavoBaseActivity(), EasyPermissions.Permissio
     private val tags = ArrayList<Tag>()
     private val spareParts = ArrayList<SpareParts>()
     private var employees = ArrayList<User>()
-    private val teams = ArrayList<Team>()
     private val tagIds = ArrayList<String>()
     private val teamIds = ArrayList<String>()
-    private var showMore = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_workorder)
         val actionBar = supportActionBar
         if (actionBar != null) {
-            actionBar.title = resources.getString(R.string.new_work_order)
+            actionBar.title = resources.getString(R.string.new_idea)
             actionBar.setDisplayHomeAsUpEnabled(true)
             supportActionBar?.elevation = 0f
         }
@@ -513,7 +510,6 @@ class NewWorkorderActivity : ConnectavoBaseActivity(), EasyPermissions.Permissio
                 )
             }
         }
-
         override fun onNothingSelected(adapterView: AdapterView<*>) {
         }
     }
@@ -524,11 +520,7 @@ class NewWorkorderActivity : ConnectavoBaseActivity(), EasyPermissions.Permissio
         const val SELECTED_ASSET_ID = "selected_asset_id"
         const val SELECTED_ASSET_NAME = "selected_asset_name"
         private const val TAGS_REQUEST_CODE = 533
-        private const val QR_SCAN_REQUEST_CODE = 534
-        private const val TEAMS_REQUEST_CODE = 539
-        private const val SPARE_PARTS_REQUEST_CODE = 541
         private const val EMPLOYEE_REQUEST_CODE = 543
         private const val SPEECH_TO_TEXT_REQUEST_CODE = 542
-        private const val LINEAR_LAYOUT_ONE_ROW = "llOneRow"
     }
 }
