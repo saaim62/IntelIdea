@@ -8,44 +8,25 @@ plugins {
 }
 
 android {
-    compileSdkVersion 32
-    buildToolsVersion "30.0.3"
-
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
     defaultConfig {
-        applicationId "com.example.fypintelidea"
+        applicationId "com.example.wadic"
         minSdkVersion 19
-        targetSdkVersion 32
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
-        vectorDrawables.useSupportLibrary = true
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
     buildTypes {
-        debug {
-            manifestPlaceholders = [enableCrashReporting: "false"]
-            firebaseCrashlytics {
-                // If you don't need crash reporting for your debug build,
-                // you can speed up your build by disabling mapping file uploading.
-                mappingFileUploadEnabled false
-            }
-        }
         release {
             minifyEnabled false
-            manifestPlaceholders = [enableCrashReporting: "true"]
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions.jvmTarget = "1.8"
-    androidExtensions.experimental = true
 }
-
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
