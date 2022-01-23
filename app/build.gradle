@@ -9,7 +9,7 @@ plugins {
 
 android {
     compileSdkVersion 32
-    buildToolsVersion "30.0.3"
+    buildToolsVersion '29.0.3'
 
     defaultConfig {
         applicationId "com.example.fypintelidea"
@@ -37,6 +37,10 @@ android {
             manifestPlaceholders = [enableCrashReporting: "true"]
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions.jvmTarget = "1.8"
     androidExtensions.experimental = true
