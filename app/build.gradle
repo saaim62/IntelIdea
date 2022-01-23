@@ -9,7 +9,7 @@ plugins {
 
 android {
     compileSdkVersion 32
-    buildToolsVersion '23.0.1'
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.example.fypintelidea"
